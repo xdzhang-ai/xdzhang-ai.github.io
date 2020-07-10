@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>djy</title>
+    <url>/2020/07/10/djy/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>hahax</title>
+    <url>/2020/07/10/hahax/</url>
+    <content><![CDATA[<p>今天新建的博客</p>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>后端</category>
+      </categories>
+  </entry>
+  <entry>
     <title>test</title>
     <url>/2020/07/10/test/</url>
     <content><![CDATA[<p>正如太阳上有黑子，水中有杂<a href="https://www.baidu.com" target="_blank" rel="noopener">https://www.baidu.com</a> 质一样，人也有各自的短处。不能因为黑子影响太阳闪耀光芒而将黑子去掉；不能因为杂质影响水的纯净度而将杂质取出；也不能因为短处影响人的全面发展而将它训练成长处。</p>
@@ -11,16 +26,6 @@
       <categories>
         <category>前端</category>
         <category>ai</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>hahax</title>
-    <url>/2020/07/10/hahax/</url>
-    <content><![CDATA[<p>今天新建的博客</p>
-]]></content>
-      <categories>
-        <category>前端</category>
-        <category>后端</category>
       </categories>
   </entry>
   <entry>
@@ -40,10 +45,5 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>djy</title>
-    <url>/2020/07/10/djy/</url>
-    <content><![CDATA[]]></content>
   </entry>
 </search>
