@@ -10,6 +10,9 @@
     <url>/2020/07/10/hahax/</url>
     <content><![CDATA[<p>今天新建的博客</p>
 ]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
   </entry>
   <entry>
     <title>Hello World</title>
