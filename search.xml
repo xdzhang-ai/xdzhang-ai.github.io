@@ -1,59 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>djy</title>
-    <url>/2020/07/10/djy/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>hahax</title>
-    <url>/2020/07/10/hahax/</url>
-    <content><![CDATA[<p>cnn:卷积神经网络</p>
-]]></content>
-      <categories>
-        <category>ai</category>
-        <category>cv</category>
-        <category>cnn</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2020/07/10/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
 <h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
   </entry>
   <entry>
-    <title>test</title>
-    <url>/2020/07/10/test/</url>
-    <content><![CDATA[<p>正如太阳上有黑子，水中有杂<a href="https://www.baidu.com" target="_blank" rel="noopener">https://www.baidu.com</a> 质一样，人也有各自的短处。不能因为黑子影响太阳闪耀光芒而将黑子去掉；不能因为杂质影响水的纯净度而将杂质取出；也不能因为短处影响人的全面发展而将它训练成长处。</p>
-<p>　　每个人都有自己的长处，与此同时，每个人也有自己的短处。有自己的长处自应感到欣喜，但对自己的短处也不要感到自卑。不要将自己的长处与他人的短处相比，也不要将自己的短处与他人的长处相较。我们要充分发挥自己的长处，让自己成为自己擅长领域的佼佼者，而不要一心想弥补自己的短处，以期望称为自己不擅长领域的领军人物。</p>
-<p>　　在家里，父母会将我们与兄弟姐妹或是邻居家的小孩相比较，听到最多的是“你看看他们多勤快，再看看你，还不快向他们学习”“你看看人家多听话，多斯文，再看看你”。在学校，老师会将我们与其他同学相比，例如“你看看人家学习多努力”“你看看人家上课多认真”。或许我们天生活泼，却要学习别人的斯文；或许我们天生富有探索精神，却要学习别人乖乖的坐在教室认真听讲。难道我们只有拥有别人的长处才能有所成就吗？</p>
-<p>　　一代文豪钱钟书，我们都知道他的文笔非常的好，他对服饰的研究也是相当的精彩，鲜为人知的是，他对生活中的事一概不知，他是一个连换灯泡都要依靠夫人的人。如果他不是充分发挥了他对文字的敏感的长处，而是去当一个生活类的学者，，我敢肯定，他一定不会有如此大的成就。再如张爱玲，几乎人人都知道她的小说写的非常的棒，但，你们知道吗？她是一个完全不会做饭的女人！她在美国四十五年的独居生活都是靠着吃面包和喝牛奶度过的！可见，她在生活上面也是一窍不通的。如果她只一味地去学怎样做一个持家的好女人，我想，她也就没有那种对周围生活的独特的观察力了，因为她的时间都花在学做饭上了，也就写不出那样脍炙人口的小说了，她也就不是现在人们眼中的张爱玲了。</p>
-]]></content>
-      <categories>
-        <category>ai</category>
-        <category>nlp</category>
-      </categories>
-      <tags>
-        <tag>人工智能</tag>
-        <tag>自然语言处理</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>test2</title>
-    <url>/2020/07/11/test2/</url>
-    <content><![CDATA[]]></content>
+    <title>hexo Front-matter</title>
+    <url>/2020/07/11/hexo-Front-matter/</url>
+    <content><![CDATA[<script type="math/tex; mode=display">
+\lim_{x \to \infty} \frac{1}{n(n+1)} = dy/dx, \mathrm{d}y/\mathrm{d}x, \frac{dy}{dx}, \frac{\mathrm{d}y}{\mathrm{d}x}, \frac{\partial^2}{\partial x_1\partial x_2}y</script>]]></content>
   </entry>
 </search>
