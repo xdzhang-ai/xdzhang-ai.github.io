@@ -1145,6 +1145,13 @@ pre .javascript .function {
   margin: 0 auto;
   max-width: 120px;
   padding: 2px;
+  height: $site-author-image-height;
+  border: 1px solid #eee;
+/* 头像圆形 */
+  border-radius: 80px;
+  -webkit-border-radius: 80px;
+  -moz-border-radius: 80px;
+  box-shadow: inset 0 -1px 0 #333 sf;
 }
 .site-author-image {
   transition: transform 1s ease-out;
@@ -1178,7 +1185,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #d27c2b;
+  background: #11e0ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
