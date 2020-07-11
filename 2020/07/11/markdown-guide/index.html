@@ -19,30 +19,37 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="another banzhuan day">
-<meta property="og:type" content="website">
-<meta property="og:title" content="祖安搬砖客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="markdown语法指南">
+<meta property="og:type" content="article">
+<meta property="og:title" content="markdown语法指南">
+<meta property="og:url" content="http://yoursite.com/2020/07/11/markdown-guide/index.html">
 <meta property="og:site_name" content="祖安搬砖客">
-<meta property="og:description" content="another banzhuan day">
+<meta property="og:description" content="markdown语法指南">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://wx1.sbimg.cn/2020/07/11/Cj8me.jpg">
+<meta property="article:published_time" content="2020-07-11T09:29:07.000Z">
+<meta property="article:modified_time" content="2020-07-11T14:14:00.667Z">
 <meta property="article:author" content="祖安搬砖客">
+<meta property="article:tag" content="markdown">
+<meta property="article:tag" content="语法">
+<meta property="article:tag" content="typora">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wx1.sbimg.cn/2020/07/11/Cj8me.jpg">
 
-<link rel="canonical" href="http://yoursite.com/">
+<link rel="canonical" href="http://yoursite.com/2020/07/11/markdown-guide/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>祖安搬砖客</title>
+  <title>markdown语法指南 | 祖安搬砖客</title>
   
 
 
@@ -178,9 +185,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -196,10 +204,9 @@
       <meta itemprop="name" content="祖安搬砖客">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/07/11/markdown-guide/" class="post-title-link" itemprop="url">markdown语法指南</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          markdown语法指南
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -226,6 +233,13 @@
             </span>
 
           
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
   
   <span class="post-meta-item">
     
@@ -240,6 +254,7 @@
   </span>
   
   
+            <div class="post-description">markdown语法指南</div>
 
         </div>
       </header>
@@ -250,110 +265,141 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>markdown语法指南</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/07/11/markdown-guide/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
+        <h1 id="markdown语法"><a href="#markdown语法" class="headerlink" title="markdown语法"></a>markdown语法</h1><h2 id="1-标题"><a href="#1-标题" class="headerlink" title="1.标题"></a>1.标题</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 一级标题</span></span><br><span class="line"><span class="comment">## 二级标题</span></span><br><span class="line"><span class="comment">### 三级标题</span></span><br><span class="line"><span class="comment">#### 四级标题</span></span><br><span class="line"><span class="comment">##### 五级标题</span></span><br><span class="line"><span class="comment">###### 六级标题</span></span><br></pre></td></tr></table></figure>
+<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><h2 id="2-代码块"><a href="#2-代码块" class="headerlink" title="2.代码块"></a>2.代码块</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">​```python</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">print(<span class="string">'hello world'</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="3-字体修改"><a href="#3-字体修改" class="headerlink" title="3.字体修改"></a>3.字体修改</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">加粗：	  **祖安搬砖客**</span><br><span class="line">高亮：	  ==祖安搬砖客== (在markdown中适用但hexo渲染失败) 建议改为 -&gt; `祖安搬砖客`</span><br><span class="line">删除线：   ~~祖安搬砖客~~</span><br><span class="line">斜体：	   *祖安搬砖客*</span><br></pre></td></tr></table></figure>
+<p><strong>祖安搬砖客</strong><br><code>祖安搬砖客</code><br><del>祖安搬砖客</del><br><em>祖安搬砖客</em></p>
+<h2 id="4-引用"><a href="#4-引用" class="headerlink" title="4.引用"></a>4.引用</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;作者：张三</span><br><span class="line">&gt;&gt;作者：李四</span><br><span class="line">&gt;&gt;&gt;作者：王五</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>作者：张三</p>
+<blockquote>
+<p>作者：李四</p>
+<blockquote>
+<p>作者：王五</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="5-分割线"><a href="#5-分割线" class="headerlink" title="5.分割线"></a>5.分割线</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">款式<span class="number">1</span>：	***</span><br><span class="line">款式<span class="number">2</span>：	---</span><br></pre></td></tr></table></figure>
+<hr>
+<hr>
+<h2 id="6-图片"><a href="#6-图片" class="headerlink" title="6.图片"></a>6.图片</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![照片名](照片路径)</span><br></pre></td></tr></table></figure>
+<p><img src="https://wx1.sbimg.cn/2020/07/11/Cj8me.jpg" alt="背景"></p>
+<h2 id="7-链接"><a href="#7-链接" class="headerlink" title="7.链接"></a>7.链接</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[链接名](链接)</span><br></pre></td></tr></table></figure>
+<p><a href="https://github.com/xdzhang-ai" target="_blank" rel="noopener">祖安搬砖客的github</a></p>
+<h2 id="8-列表"><a href="#8-列表" class="headerlink" title="8.列表"></a>8.列表</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">无序列表：</span><br><span class="line">	- 元素<span class="number">1</span></span><br><span class="line">    - 元素<span class="number">2</span></span><br><span class="line">    - 元素<span class="number">3</span></span><br><span class="line">有序列表：</span><br><span class="line">	<span class="number">1.</span> 元素<span class="number">1</span></span><br><span class="line">    <span class="number">2.</span> 元素<span class="number">2</span></span><br><span class="line">    <span class="number">3.</span> 元素<span class="number">3</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>昨天</li>
+<li>今天</li>
+<li>明天</li>
+</ul>
+<ol>
+<li>大</li>
+<li>中</li>
+<li>小</li>
+</ol>
+<h2 id="9-表格"><a href="#9-表格" class="headerlink" title="9.表格"></a>9.表格</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">建议使用typora中的插入表格</span><br></pre></td></tr></table></figure>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">性别</th>
+<th style="text-align:center">男</th>
+<th style="text-align:center">女</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">年龄</td>
+<td style="text-align:center">23</td>
+<td style="text-align:center">21</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>注：在typora中按住command+/可显示markdown源码</strong></p>
+
     </div>
 
     
     
     
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
+        <div class="reward-container">
+  <div>你的鼓励是我最大的动力 🙂</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
       
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/10/hello-world/">
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="祖安搬砖客 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="祖安搬砖客 支付宝">
+        <p>支付宝</p>
+      </div>
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-      <meta itemprop="name" content="祖安搬砖客">
-      <meta itemprop="description" content="another banzhuan day">
-    </span>
+  </div>
+</div>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="祖安搬砖客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/07/10/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
+      <footer class="post-footer">
+        <div>    
+         
+         
+            
+<ul class="post-copyright" style="margin: 1em 0 0;
+                        padding: 0.5em 1em;
+                        border-left: 3px solid #ff1700;
+                        background-color: #f9f9f9;
+                        list-style: none;">
+              <li class="post-copyright-author">
+                  <strong>本文作者：</strong>祖安搬砖客
+              </li>
+              <li class="post-copyright-link">
+                <strong>本文链接：</strong>
+                <a href="/2020/07/11/markdown-guide/" title="markdown语法指南">https://xdzhang-ai.github.io/2020/07/11/markdown-guide/</a>
+              </li>
+              <li class="post-copyright-license">
+                <strong>版权： </strong>
+                本站文章均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议，请勿用于商业，转载注明出处！
+              </li>
+            </ul>
 
-              <time title="创建时间：2020-07-10 10:53:01" itemprop="dateCreated datePublished" datetime="2020-07-10T10:53:01+08:00">2020-07-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-11 19:24:37" itemprop="dateModified" datetime="2020-07-11T19:24:37+08:00">2020-07-11</time>
-              </span>
 
-          
-  
-  
-
+         
         </div>
-      </header>
+          <div class="post-tags">
+              <a href="/tags/markdown/" rel="tag"># markdown</a>
+              <a href="/tags/%E8%AF%AD%E6%B3%95/" rel="tag"># 语法</a>
+              <a href="/tags/typora/" rel="tag"># typora</a>
+          </div>
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>hexo guide</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/07/10/hello-world/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/07/10/hello-world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -400,6 +446,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#markdown语法"><span class="nav-number">1.</span> <span class="nav-text">markdown语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-标题"><span class="nav-number">1.1.</span> <span class="nav-text">1.标题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一级标题"><span class="nav-number">2.</span> <span class="nav-text">一级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#二级标题"><span class="nav-number">2.1.</span> <span class="nav-text">二级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三级标题"><span class="nav-number">2.1.1.</span> <span class="nav-text">三级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#四级标题"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">四级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#五级标题"><span class="nav-number">2.1.1.1.1.</span> <span class="nav-text">五级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#六级标题"><span class="nav-number">2.1.1.1.1.1.</span> <span class="nav-text">六级标题</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-代码块"><span class="nav-number">2.2.</span> <span class="nav-text">2.代码块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-字体修改"><span class="nav-number">2.3.</span> <span class="nav-text">3.字体修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-引用"><span class="nav-number">2.4.</span> <span class="nav-text">4.引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-分割线"><span class="nav-number">2.5.</span> <span class="nav-text">5.分割线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-图片"><span class="nav-number">2.6.</span> <span class="nav-text">6.图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-链接"><span class="nav-number">2.7.</span> <span class="nav-text">7.链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-列表"><span class="nav-number">2.8.</span> <span class="nav-text">8.列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-表格"><span class="nav-number">2.9.</span> <span class="nav-text">9.表格</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

@@ -15,9 +15,70 @@
 ]]></content>
   </entry>
   <entry>
-    <title>hexo Front-matter</title>
-    <url>/2020/07/11/hexo-Front-matter/</url>
-    <content><![CDATA[<script type="math/tex; mode=display">
-\lim_{x \to \infty} \frac{1}{n(n+1)} = dy/dx, \mathrm{d}y/\mathrm{d}x, \frac{dy}{dx}, \frac{\mathrm{d}y}{\mathrm{d}x}, \frac{\partial^2}{\partial x_1\partial x_2}y</script>]]></content>
+    <title>markdown语法指南</title>
+    <url>/2020/07/11/markdown-guide/</url>
+    <content><![CDATA[<h1 id="markdown语法"><a href="#markdown语法" class="headerlink" title="markdown语法"></a>markdown语法</h1><h2 id="1-标题"><a href="#1-标题" class="headerlink" title="1.标题"></a>1.标题</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 一级标题</span></span><br><span class="line"><span class="comment">## 二级标题</span></span><br><span class="line"><span class="comment">### 三级标题</span></span><br><span class="line"><span class="comment">#### 四级标题</span></span><br><span class="line"><span class="comment">##### 五级标题</span></span><br><span class="line"><span class="comment">###### 六级标题</span></span><br></pre></td></tr></table></figure>
+<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><h2 id="2-代码块"><a href="#2-代码块" class="headerlink" title="2.代码块"></a>2.代码块</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">​```python</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">print(<span class="string">'hello world'</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="3-字体修改"><a href="#3-字体修改" class="headerlink" title="3.字体修改"></a>3.字体修改</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">加粗：	  **祖安搬砖客**</span><br><span class="line">高亮：	  ==祖安搬砖客== (在markdown中适用但hexo渲染失败) 建议改为 -&gt; `祖安搬砖客`</span><br><span class="line">删除线：   ~~祖安搬砖客~~</span><br><span class="line">斜体：	   *祖安搬砖客*</span><br></pre></td></tr></table></figure>
+<p><strong>祖安搬砖客</strong><br><code>祖安搬砖客</code><br><del>祖安搬砖客</del><br><em>祖安搬砖客</em></p>
+<h2 id="4-引用"><a href="#4-引用" class="headerlink" title="4.引用"></a>4.引用</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&gt;作者：张三</span><br><span class="line">&gt;&gt;作者：李四</span><br><span class="line">&gt;&gt;&gt;作者：王五</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>作者：张三</p>
+<blockquote>
+<p>作者：李四</p>
+<blockquote>
+<p>作者：王五</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="5-分割线"><a href="#5-分割线" class="headerlink" title="5.分割线"></a>5.分割线</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">款式<span class="number">1</span>：	***</span><br><span class="line">款式<span class="number">2</span>：	---</span><br></pre></td></tr></table></figure>
+<hr>
+<hr>
+<h2 id="6-图片"><a href="#6-图片" class="headerlink" title="6.图片"></a>6.图片</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">![照片名](照片路径)</span><br></pre></td></tr></table></figure>
+<p><img src="https://wx1.sbimg.cn/2020/07/11/Cj8me.jpg" alt="背景"></p>
+<h2 id="7-链接"><a href="#7-链接" class="headerlink" title="7.链接"></a>7.链接</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">[链接名](链接)</span><br></pre></td></tr></table></figure>
+<p><a href="https://github.com/xdzhang-ai" target="_blank" rel="noopener">祖安搬砖客的github</a></p>
+<h2 id="8-列表"><a href="#8-列表" class="headerlink" title="8.列表"></a>8.列表</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">无序列表：</span><br><span class="line">	- 元素<span class="number">1</span></span><br><span class="line">    - 元素<span class="number">2</span></span><br><span class="line">    - 元素<span class="number">3</span></span><br><span class="line">有序列表：</span><br><span class="line">	<span class="number">1.</span> 元素<span class="number">1</span></span><br><span class="line">    <span class="number">2.</span> 元素<span class="number">2</span></span><br><span class="line">    <span class="number">3.</span> 元素<span class="number">3</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>昨天</li>
+<li>今天</li>
+<li>明天</li>
+</ul>
+<ol>
+<li>大</li>
+<li>中</li>
+<li>小</li>
+</ol>
+<h2 id="9-表格"><a href="#9-表格" class="headerlink" title="9.表格"></a>9.表格</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">建议使用typora中的插入表格</span><br></pre></td></tr></table></figure>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">性别</th>
+<th style="text-align:center">男</th>
+<th style="text-align:center">女</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">年龄</td>
+<td style="text-align:center">23</td>
+<td style="text-align:center">21</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>注：在typora中按住command+/可显示markdown源码</strong></p>
+]]></content>
+      <categories>
+        <category>语言</category>
+        <category>markdown</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+        <tag>语法</tag>
+        <tag>typora</tag>
+      </tags>
   </entry>
 </search>
