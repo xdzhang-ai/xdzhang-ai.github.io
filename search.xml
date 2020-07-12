@@ -39,8 +39,10 @@
 <h2><span id="5分割线">5.分割线</span></h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">款式<span class="number">1</span>：	***</span><br><span class="line">款式<span class="number">2</span>：	---</span><br></pre></td></tr></table></figure>
 <hr>
 <hr>
-<h2><span id="6图片">6.图片</span></h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">![照片名](照片路径)</span><br></pre></td></tr></table></figure>
+<h2><span id="6图片">6.图片</span></h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">![照片名](照片路径)</span><br><span class="line">缩放图片： 在输入![照片名](照片路径)后typora会弹出缩放选项</span><br></pre></td></tr></table></figure>
 <p><img src="https://s1.ax1x.com/2020/07/12/U3kL5Q.jpg" alt="背景"></p>
+<p>缩放后的图片</p>
+<p><img src="https://s1.ax1x.com/2020/07/12/U3kL5Q.jpg" alt="背景2" style="zoom:20%;"></p>
 <h2><span id="7链接">7.链接</span></h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">[链接名](链接)</span><br></pre></td></tr></table></figure>
 <p><a href="https://github.com/xdzhang-ai" target="_blank" rel="noopener">祖安搬砖客的github</a></p>
 <h2><span id="8脚注">8.脚注</span></h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">在内容旁添加 [^脚注标号]</span><br><span class="line">在文章末添加 [^脚注标号]: 注释内容	<span class="comment"># 一定要加空格！！！</span></span><br></pre></td></tr></table></figure>
