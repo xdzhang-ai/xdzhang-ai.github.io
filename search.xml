@@ -4,29 +4,29 @@
     <title>Hello World</title>
     <url>/2020/07/10/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2><span id="quick-start">Quick Start</span></h2><h3><span id="create-a-new-post">Create a new post</span></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3><span id="run-server">Run server</span></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3><span id="generate-static-files">Generate static files</span></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3><span id="deploy-to-remote-sites">Deploy to remote sites</span></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
   </entry>
   <entry>
     <title>markdown语法指南</title>
     <url>/2020/07/11/markdown-guide/</url>
-    <content><![CDATA[<h1><span id="markdown语法">markdown语法</span></h1><blockquote>
+    <content><![CDATA[<h1 id="markdown语法"><a href="#markdown语法" class="headerlink" title="markdown语法"></a>markdown语法</h1><blockquote>
 <p>mardown编辑器：typora</p>
 <p>环境：hexo博客</p>
 </blockquote>
-<h2><span id="1标题">1.标题</span></h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 一级标题</span></span><br><span class="line"><span class="comment">## 二级标题</span></span><br><span class="line"><span class="comment">### 三级标题</span></span><br><span class="line"><span class="comment">#### 四级标题</span></span><br><span class="line"><span class="comment">##### 五级标题</span></span><br><span class="line"><span class="comment">###### 六级标题</span></span><br></pre></td></tr></table></figure>
-<h1><span id="一级标题">一级标题</span></h1><h2><span id="二级标题">二级标题</span></h2><h3><span id="三级标题">三级标题</span></h3><h4><span id="四级标题">四级标题</span></h4><h5><span id="五级标题">五级标题</span></h5><h6><span id="六级标题">六级标题</span></h6><h2><span id="2代码块">2.代码块</span></h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">​```python</span><br></pre></td></tr></table></figure>
+<h2 id="1-标题"><a href="#1-标题" class="headerlink" title="1.标题"></a>1.标题</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 一级标题</span></span><br><span class="line"><span class="comment">## 二级标题</span></span><br><span class="line"><span class="comment">### 三级标题</span></span><br><span class="line"><span class="comment">#### 四级标题</span></span><br><span class="line"><span class="comment">##### 五级标题</span></span><br><span class="line"><span class="comment">###### 六级标题</span></span><br></pre></td></tr></table></figure>
+<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><h2 id="2-代码块"><a href="#2-代码块" class="headerlink" title="2.代码块"></a>2.代码块</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">​```python</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">print(<span class="string">'hello world'</span>)</span><br></pre></td></tr></table></figure>
-<h2><span id="3字体修改">3.字体修改</span></h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">加粗：	  **祖安搬砖客**</span><br><span class="line">高亮：	  ==祖安搬砖客== (在markdown中适用但hexo渲染失败) 建议改为 -&gt; `祖安搬砖客`</span><br><span class="line">删除线：   ~~祖安搬砖客~~</span><br><span class="line">斜体：	   *祖安搬砖客*</span><br></pre></td></tr></table></figure>
+<h2 id="3-字体修改"><a href="#3-字体修改" class="headerlink" title="3.字体修改"></a>3.字体修改</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">加粗：	  **祖安搬砖客**</span><br><span class="line">高亮：	  ==祖安搬砖客== (在markdown中适用但hexo渲染失败) 建议改为 -&gt; `祖安搬砖客`</span><br><span class="line">删除线：   ~~祖安搬砖客~~</span><br><span class="line">斜体：	   *祖安搬砖客*</span><br></pre></td></tr></table></figure>
 <p><strong>祖安搬砖客</strong><br><code>祖安搬砖客</code><br><del>祖安搬砖客</del><br><em>祖安搬砖客</em></p>
-<h2><span id="4引用">4.引用</span></h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&gt;作者：张三</span><br><span class="line">&gt;&gt;作者：李四</span><br><span class="line">&gt;&gt;&gt;作者：王五</span><br></pre></td></tr></table></figure>
+<h2 id="4-引用"><a href="#4-引用" class="headerlink" title="4.引用"></a>4.引用</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&gt;作者：张三</span><br><span class="line">&gt;&gt;作者：李四</span><br><span class="line">&gt;&gt;&gt;作者：王五</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>作者：张三</p>
 <blockquote>
@@ -36,20 +36,20 @@
 </blockquote>
 </blockquote>
 </blockquote>
-<h2><span id="5分割线">5.分割线</span></h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">款式<span class="number">1</span>：	***</span><br><span class="line">款式<span class="number">2</span>：	---</span><br></pre></td></tr></table></figure>
+<h2 id="5-分割线"><a href="#5-分割线" class="headerlink" title="5.分割线"></a>5.分割线</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">款式<span class="number">1</span>：	***</span><br><span class="line">款式<span class="number">2</span>：	---</span><br></pre></td></tr></table></figure>
 <hr>
 <hr>
-<h2><span id="6图片">6.图片</span></h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">![照片名](照片路径)</span><br><span class="line">缩放图片： 在输入![照片名](照片路径)后typora会弹出缩放选项</span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2020/07/12/U3kL5Q.jpg" alt="背景"></p>
+<h2 id="6-图片"><a href="#6-图片" class="headerlink" title="6.图片"></a>6.图片</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">![照片名](照片路径)</span><br><span class="line">缩放图片： 在输入![照片名](照片路径)后typora会弹出缩放选项</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2020/07/12/U3kL5Q.jpg" alt="背景" /></p>
 <p>缩放后的图片</p>
-<p><img src="https://s1.ax1x.com/2020/07/12/U3kL5Q.jpg" alt="背景2" style="zoom:20%;"></p>
-<h2><span id="7链接">7.链接</span></h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">[链接名](链接)</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2020/07/12/U3kL5Q.jpg" alt="背景2" style="zoom:20%;" /></p>
+<h2 id="7-链接"><a href="#7-链接" class="headerlink" title="7.链接"></a>7.链接</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">[链接名](链接)</span><br></pre></td></tr></table></figure>
 <p><a href="https://github.com/xdzhang-ai" target="_blank" rel="noopener">祖安搬砖客的github</a></p>
-<h2><span id="8脚注">8.脚注</span></h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">在内容旁添加 [^脚注标号]</span><br><span class="line">在文章末添加 [^脚注标号]: 注释内容	<span class="comment"># 一定要加空格！！！</span></span><br></pre></td></tr></table></figure>
+<h2 id="8-脚注"><a href="#8-脚注" class="headerlink" title="8.脚注"></a>8.脚注</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">在内容旁添加 [^脚注标号]</span><br><span class="line">在文章末添加 [^脚注标号]: 注释内容	<span class="comment"># 一定要加空格！！！</span></span><br></pre></td></tr></table></figure>
 <p>文章内容<sup><a href="#fn_1" id="reffn_1">1</a></sup></p>
 <p>空白行<sup><a href="#fn_2" id="reffn_2">2</a></sup> </p>
 <p>&nbsp;</p>
-<h2><span id="9列表">9.列表</span></h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">无序列表：</span><br><span class="line">    - 元素<span class="number">1</span></span><br><span class="line">    - 元素<span class="number">2</span></span><br><span class="line">    - 元素<span class="number">3</span></span><br><span class="line">有序列表：</span><br><span class="line">    <span class="number">1.</span> 元素<span class="number">1</span></span><br><span class="line">    <span class="number">2.</span> 元素<span class="number">2</span></span><br><span class="line">    <span class="number">3.</span> 元素<span class="number">3</span></span><br></pre></td></tr></table></figure>
+<h2 id="9-列表"><a href="#9-列表" class="headerlink" title="9.列表"></a>9.列表</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">无序列表：</span><br><span class="line">    - 元素<span class="number">1</span></span><br><span class="line">    - 元素<span class="number">2</span></span><br><span class="line">    - 元素<span class="number">3</span></span><br><span class="line">有序列表：</span><br><span class="line">    <span class="number">1.</span> 元素<span class="number">1</span></span><br><span class="line">    <span class="number">2.</span> 元素<span class="number">2</span></span><br><span class="line">    <span class="number">3.</span> 元素<span class="number">3</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>昨天</li>
 <li>今天</li>
@@ -60,7 +60,7 @@
 <li>中</li>
 <li>小</li>
 </ol>
-<h2><span id="10表格">10.表格</span></h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">建议使用typora中的插入表格</span><br></pre></td></tr></table></figure>
+<h2 id="10-表格"><a href="#10-表格" class="headerlink" title="10.表格"></a>10.表格</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">建议使用typora中的插入表格</span><br></pre></td></tr></table></figure>
 <div class="table-container">
 <table>
 <thead>
@@ -100,7 +100,34 @@
   <entry>
     <title>hexo+gitee部署与图床</title>
     <url>/2020/07/12/%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%9B%BE%E5%BA%8A/</url>
-    <content><![CDATA[<h1><span id>#</span></h1>]]></content>
+    <content><![CDATA[<!-- toc -->
+<h2 id="在gitee上部署hexo博客"><a href="#在gitee上部署hexo博客" class="headerlink" title="在gitee上部署hexo博客"></a>在gitee上部署hexo博客</h2><p>​    之前在<a href="https://github.com" target="_blank" rel="noopener">github</a>上部署了hexo博客，无奈国内访问速度实在捉鸡，后来试过<a href="https://coding.net" target="_blank" rel="noopener">coding</a>，生成链接后发现链接名比较混乱，访问速度也很慢。最终还是选择<a href="https://gitee.com" target="_blank" rel="noopener">gitee</a><sup><a href="#fn_1" id="reffn_1">1</a></sup>来部署博客吧~</p>
+<h3 id="创建gitee仓库"><a href="#创建gitee仓库" class="headerlink" title="创建gitee仓库"></a>创建gitee仓库</h3><p>​    首先进入到<a href="https://gitee.com" target="_blank" rel="noopener">gitee</a>官网注册并登陆账号，这里需要记住你的用户名，在右上角新建仓库</p>
+<p><img src="https://s1.ax1x.com/2020/07/12/U3BC1H.png" alt="创建仓库" style="zoom:50%;" /></p>
+<p>​    填写仓库名称，这里的名称最好要和用户名一致，比如我的用户名是<strong>xdzhang-ai</strong>，所以仓库名也是<strong>xdzhang-ai</strong>，这样最后生成的链接将会是<a href="https://xdzhang-ai.gitee.io" target="_blank" rel="noopener">用户名.gitee.io</a>的形式，更加简洁。</p>
+<p><img src="https://s1.ax1x.com/2020/07/12/U3DC5T.png" alt="仓库名" style="zoom:50%;" /></p>
+<h3 id="关联gitee账号，免密提交"><a href="#关联gitee账号，免密提交" class="headerlink" title="关联gitee账号，免密提交"></a>关联gitee账号，免密提交</h3><p>​    为了在后面的部署中不用每次都输入密码，可以生成秘钥，然后提交到gitee，进行关联</p>
+<p>首先在本地生成公钥和私钥，打开终端，输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"注册邮箱"</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2020/07/12/U3c7an.png" alt="ssh" style="zoom:50%;" /></p>
+<p>后面会要求输入保存地址，不用理会，一路回车，按照默认地址即可。如果之前生成过，会要求选择是否覆盖，这里选择覆盖。</p>
+<p>如果是默认地址，秘钥一般保存在<code>/Users/用户名/.ssh</code><sup><a href="#fn_2" id="reffn_2">2</a></sup>中，这个是隐藏文件夹，按下<code>shift+command+.</code>来显示。打开<strong>.ssh</strong>中的<strong>id_rsa.pub</strong>复制其中内容</p>
+<p>再到gitee打开<strong>设置</strong>，找到左侧<strong>安全设置</strong>中的<strong>SSH公钥</strong></p>
+<p><img src="https://s1.ax1x.com/2020/07/12/U32EYq.png" alt="设置" style="zoom:50%;" /></p>
+<p><img src="https://s1.ax1x.com/2020/07/12/U32t1K.png" alt="sshkey" style="zoom:50%;" /></p>
+<p>这里标题随便取，将刚刚复制的粘贴在<strong>公钥</strong>栏中，点击确定即可</p>
+<p><img src="https://s1.ax1x.com/2020/07/12/U32h7j.png" alt="copy" style="zoom:30%;" /></p>
+<h4 id="测试连通性"><a href="#测试连通性" class="headerlink" title="测试连通性"></a>测试连通性</h4><p>在终端中输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh -T git@gitee.com</span><br></pre></td></tr></table></figure>
+<p>出现下图情况说明验证成功</p>
+<p><img src="https://s1.ax1x.com/2020/07/12/U3Rt5n.png" alt="connect" style="zoom:50%;" /></p>
+<blockquote id="fn_1">
+<sup>1</sup>. <a href="https://gitee.com" target="_blank" rel="noopener">gitee</a>是中文代码托管平台，其功能和<a href="https://github.com" target="_blank" rel="noopener">github</a>类似，但其国内访问比<a href="https://github.com" target="_blank" rel="noopener">github</a>快很多<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_2">
+<sup>2</sup>. macOS的路径<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
+</blockquote>
+]]></content>
       <categories>
         <category>hexo</category>
       </categories>

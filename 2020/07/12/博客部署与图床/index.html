@@ -26,13 +26,21 @@
 <meta property="og:site_name" content="祖安搬砖客">
 <meta property="og:description" content="将博客部署至gitee和常用图床网站">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/12/U3BC1H.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/12/U3DC5T.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/12/U3c7an.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/12/U32EYq.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/12/U32t1K.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/12/U32h7j.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/12/U3Rt5n.png">
 <meta property="article:published_time" content="2020-07-12T02:44:17.000Z">
-<meta property="article:modified_time" content="2020-07-12T02:52:23.082Z">
+<meta property="article:modified_time" content="2020-07-12T08:00:13.601Z">
 <meta property="article:author" content="祖安搬砖客">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="gitee">
 <meta property="article:tag" content="图床">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/07/12/U3BC1H.png">
 
 <link rel="canonical" href="http://yoursite.com/2020/07/12/%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%9B%BE%E5%BA%8A/">
 
@@ -214,7 +222,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-07-12 10:44:17 / 修改时间：10:52:23" itemprop="dateCreated datePublished" datetime="2020-07-12T10:44:17+08:00">2020-07-12</time>
+              <time title="创建时间：2020-07-12 10:44:17 / 修改时间：16:00:13" itemprop="dateCreated datePublished" datetime="2020-07-12T10:44:17+08:00">2020-07-12</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -259,7 +267,34 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1><span id>#</span></h1>
+        <!-- toc -->
+<h2 id="在gitee上部署hexo博客"><a href="#在gitee上部署hexo博客" class="headerlink" title="在gitee上部署hexo博客"></a>在gitee上部署hexo博客</h2><p>​    之前在<a href="https://github.com" target="_blank" rel="noopener">github</a>上部署了hexo博客，无奈国内访问速度实在捉鸡，后来试过<a href="https://coding.net" target="_blank" rel="noopener">coding</a>，生成链接后发现链接名比较混乱，访问速度也很慢。最终还是选择<a href="https://gitee.com" target="_blank" rel="noopener">gitee</a><sup><a href="#fn_1" id="reffn_1">1</a></sup>来部署博客吧~</p>
+<h3 id="创建gitee仓库"><a href="#创建gitee仓库" class="headerlink" title="创建gitee仓库"></a>创建gitee仓库</h3><p>​    首先进入到<a href="https://gitee.com" target="_blank" rel="noopener">gitee</a>官网注册并登陆账号，这里需要记住你的用户名，在右上角新建仓库</p>
+<p><img src="https://s1.ax1x.com/2020/07/12/U3BC1H.png" alt="创建仓库" style="zoom:50%;" /></p>
+<p>​    填写仓库名称，这里的名称最好要和用户名一致，比如我的用户名是<strong>xdzhang-ai</strong>，所以仓库名也是<strong>xdzhang-ai</strong>，这样最后生成的链接将会是<a href="https://xdzhang-ai.gitee.io" target="_blank" rel="noopener">用户名.gitee.io</a>的形式，更加简洁。</p>
+<p><img src="https://s1.ax1x.com/2020/07/12/U3DC5T.png" alt="仓库名" style="zoom:50%;" /></p>
+<h3 id="关联gitee账号，免密提交"><a href="#关联gitee账号，免密提交" class="headerlink" title="关联gitee账号，免密提交"></a>关联gitee账号，免密提交</h3><p>​    为了在后面的部署中不用每次都输入密码，可以生成秘钥，然后提交到gitee，进行关联</p>
+<p>首先在本地生成公钥和私钥，打开终端，输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"注册邮箱"</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2020/07/12/U3c7an.png" alt="ssh" style="zoom:50%;" /></p>
+<p>后面会要求输入保存地址，不用理会，一路回车，按照默认地址即可。如果之前生成过，会要求选择是否覆盖，这里选择覆盖。</p>
+<p>如果是默认地址，秘钥一般保存在<code>/Users/用户名/.ssh</code><sup><a href="#fn_2" id="reffn_2">2</a></sup>中，这个是隐藏文件夹，按下<code>shift+command+.</code>来显示。打开<strong>.ssh</strong>中的<strong>id_rsa.pub</strong>复制其中内容</p>
+<p>再到gitee打开<strong>设置</strong>，找到左侧<strong>安全设置</strong>中的<strong>SSH公钥</strong></p>
+<p><img src="https://s1.ax1x.com/2020/07/12/U32EYq.png" alt="设置" style="zoom:50%;" /></p>
+<p><img src="https://s1.ax1x.com/2020/07/12/U32t1K.png" alt="sshkey" style="zoom:50%;" /></p>
+<p>这里标题随便取，将刚刚复制的粘贴在<strong>公钥</strong>栏中，点击确定即可</p>
+<p><img src="https://s1.ax1x.com/2020/07/12/U32h7j.png" alt="copy" style="zoom:30%;" /></p>
+<h4 id="测试连通性"><a href="#测试连通性" class="headerlink" title="测试连通性"></a>测试连通性</h4><p>在终端中输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@gitee.com</span><br></pre></td></tr></table></figure>
+<p>出现下图情况说明验证成功</p>
+<p><img src="https://s1.ax1x.com/2020/07/12/U3Rt5n.png" alt="connect" style="zoom:50%;" /></p>
+<blockquote id="fn_1">
+<sup>1</sup>. <a href="https://gitee.com" target="_blank" rel="noopener">gitee</a>是中文代码托管平台，其功能和<a href="https://github.com" target="_blank" rel="noopener">github</a>类似，但其国内访问比<a href="https://github.com" target="_blank" rel="noopener">github</a>快很多<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_2">
+<sup>2</sup>. macOS的路径<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
+</blockquote>
+
     </div>
 
     
@@ -387,7 +422,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text">#</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#在gitee上部署hexo博客"><span class="nav-number">1.</span> <span class="nav-text">在gitee上部署hexo博客</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建gitee仓库"><span class="nav-number">1.1.</span> <span class="nav-text">创建gitee仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关联gitee账号，免密提交"><span class="nav-number">1.2.</span> <span class="nav-text">关联gitee账号，免密提交</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#测试连通性"><span class="nav-number">1.2.1.</span> <span class="nav-text">测试连通性</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
