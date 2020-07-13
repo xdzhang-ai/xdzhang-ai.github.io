@@ -248,14 +248,21 @@ hr {
   margin: 40px 0;
 }
 blockquote {
-  border-left: 4px solid #ddd;
-  color: #666;
+  border-left: 4px solid #42b983;
+  color: #777;
+  background-color: rgba(66,185,131,0.1);
   margin: 0;
   padding: 0 15px;
 }
 blockquote cite::before {
   content: '-';
   padding: 0 5px;
+}
+blockquote a {
+  color: #42b983 !important;
+}
+sup a {
+  color: #42b983 !important;
 }
 dt {
   font-weight: bold;
@@ -419,9 +426,9 @@ code {
   font-family: consolas, Menlo, monospace, "PingFang SC", "Microsoft YaHei";
 }
 code {
-  background: #eee;
-  border-radius: 3px;
-  color: #555;
+  background: #f8f8f8;
+  border-radius: 2px;
+  color: #e96900;
   padding: 2px 4px;
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -1210,7 +1217,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #e0f257;
+  background: #ff70c9;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
