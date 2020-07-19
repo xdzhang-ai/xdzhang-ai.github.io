@@ -41,20 +41,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/07/10/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>markdown语法指南</title>
     <url>/2020/07/11/markdown-guide/</url>
     <content><![CDATA[<h1 id="markdown语法"><a href="#markdown语法" class="headerlink" title="markdown语法"></a>markdown语法</h1><blockquote>
@@ -136,6 +122,56 @@
         <tag>语法</tag>
         <tag>typora</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>一款好看的pycharm主题Atom One Dark</title>
+    <url>/2020/07/19/pycharm-theme/</url>
+    <content><![CDATA[<blockquote>
+<p>pycharm版本：2020.1.2 Professional</p>
+<p>主题插件：Material Theme UI、Atom Material Icons</p>
+</blockquote>
+<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p><img src="https://s1.ax1x.com/2020/07/19/UWksYt.png" alt="view" style="zoom:67%;" /></p>
+<h2 id="插件下载方法"><a href="#插件下载方法" class="headerlink" title="插件下载方法"></a>插件下载方法</h2><h3 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h3><p>在<code>Preference</code>中找到<code>Plugins</code>一项，在插件商场中输入插件名并安装</p>
+<p><img src="https://s1.ax1x.com/2020/07/19/UWC7rj.png" alt="IDE" style="zoom:50%;" /></p>
+<p>一开始用这种方法但是下载一半就fail了，所以转到官网下载</p>
+<h3 id="官网下载"><a href="#官网下载" class="headerlink" title="官网下载"></a>官网下载</h3><p><a href="https://github.com/ChrisRM/material-theme-jetbrains" target="_blank" rel="noopener">Material Theme UI github地址</a></p>
+<p><a href="https://plugins.jetbrains.com/plugin/8006-material-theme-ui" target="_blank" rel="noopener">Material Theme UI插件官网地址</a></p>
+<p>在插件官网中选择pycharm professional和相应的版本</p>
+<p><img src="https://s1.ax1x.com/2020/07/19/UWiP1S.png" alt="guan" style="zoom:50%;" /></p>
+<p>这里的下载同样很慢，但是可以断点续传，传输失败后点击继续下载即可</p>
+<p>花了一个多小时，在经历了N次续传后才差不多下完</p>
+<p>下载好的插件是一个zip文件，在pycharm的<code>Plugins</code>栏中选择<code>install plugins from disk</code>，选择插件后重启即可</p>
+<p><img src="https://s1.ax1x.com/2020/07/19/UWittx.png" alt="chajian" style="zoom:50%;" /></p>
+<p>插件自带多款主题，安装完成后可以在<code>Editor&gt;Color Scheme</code>中选择主题，我这里选择的是<strong>Atom One Dark</strong></p>
+<p><img src="https://s1.ax1x.com/2020/07/19/UWFJKg.png" alt="atom" style="zoom:50%;" /></p>
+<h4 id="配置图标"><a href="#配置图标" class="headerlink" title="配置图标"></a>配置图标</h4><p>由于在<code>Material Theme UI</code> 5.0之后就不再集成图标插件<sup><a href="#fn_1" id="reffn_1">1</a></sup>，因此图标插件需要另外下载</p>
+<p><a href="https://plugins.jetbrains.com/" target="_blank" rel="noopener">图标插件官网</a>搜索<code>Atom Material Icons</code>下载插件，操作与之前相同</p>
+<blockquote id="fn_1">
+<sup>1</sup>. 官方文档：<a href="https://www.material-theme.com/docs/configuration/icons-settings/" target="_blank" rel="noopener">https://www.material-theme.com/docs/configuration/icons-settings/</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+</blockquote>
+]]></content>
+      <categories>
+        <category>IDE</category>
+        <category>pycharm</category>
+      </categories>
+      <tags>
+        <tag>主题</tag>
+        <tag>pycharm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/07/10/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>hexo+gitee部署与图床</title>
