@@ -1,44 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>hexo之front-matter</title>
-    <url>/2020/07/13/front-matter/</url>
+    <title>谈谈mac python3.7搭建HanLP环境时遇到的坑</title>
+    <url>/2020/07/21/bug-hanlp-env/</url>
     <content><![CDATA[<blockquote>
-<p><a href="https://hexo.bootcss.com/docs/front-matter.html" target="_blank" rel="noopener">hexo官方文档</a></p>
-<p>Front-matter 是文件最上方以 <code>---</code> 分隔的区域，用于指定个别文件的变量</p>
+<p>系统：macos Catalina</p>
+<p>环境：</p>
+<p>​    — anaconda:   Anaconda3-2019.07</p>
+<p>​    — python:         3.7</p>
+<p>​    — hanlp:            v1.7.8</p>
 </blockquote>
-<p>在hexo生成文件时，会调用front-matter的参数来完成相关配置</p>
-<p>常用的参数有</p>
-<ul>
-<li>title           标题</li>
-<li>date          建立日期</li>
-<li>comments       评论（如果设置了评论功能可以选择是否开启）</li>
-<li>description      描述（用于指定显示在首页中的文章描述，不会在文章中出现）</li>
-<li><code>tags</code>       标签</li>
-<li><code>categories</code>      分类       </li>
-</ul>
-<p>其中<code>标签</code>和<code>分类</code>需要重点关注，两者概念看似接近，实则不同，用法也有差异</p>
-<p>&nbsp;</p>
-<p>对于<code>标签</code>来说</p>
-<p>​    一篇文章可以有单个或多个标签，多个标签时标签之间是<strong>同级</strong>的</p>
-<p>​    在<code>front-matter</code>中可以通过以下方式生成多个标签<sup><a href="#fn_1" id="reffn_1">1</a></sup></p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">tags: [tag1, tag2, tag3]</span><br></pre></td></tr></table></figure>
-<p>对于<code>分类</code>来说</p>
-<p>​    一篇文章只允许有<strong>一个</strong>分类，不能同时分类到多个类别下，但是可以生成<strong>多级</strong>类别</p>
-<p>​    在<code>front-matter</code>中可以通过以下方式生成多级类别</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">categories:</span><br><span class="line"><span class="bullet">- </span>cat1</span><br><span class="line"><span class="bullet">- </span>cat2</span><br><span class="line"><span class="bullet">- </span>cat3</span><br></pre></td></tr></table></figure>
-<p>​    这样文章就会被归类到<code>cat1</code>下的子类<code>cat2</code>下的子类<code>cat3</code>类别下</p>
-<blockquote id="fn_1">
-<sup>1</sup>. 必须遵守严格的front-matter语法——<code>:</code>后要+<code>空格</code><a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
-</blockquote>
+<p>读到何晗《自然语言处理入门》的1.6节要安装开源工具<code>HanLP</code>，而HanLP的python接口由<code>pyhanlp</code>包提供，所以首先要下载pyhanlp，在pycharm的terminal中输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">% pip install pyhanlp</span><br></pre></td></tr></table></figure>
+<p>在安装<code>JPype1</code>包时报了一长串的错误，摘录其中关键的错误信息：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">% <span class="built_in">command</span> <span class="string">'gcc'</span> failed with <span class="built_in">exit</span> status 1</span><br></pre></td></tr></table></figure>
+<p>应该是gcc的问题，遂一番百度，找到一个解决方法：<a href="https://cloud.tencent.com/developer/ask/209791" target="_blank" rel="noopener">https://cloud.tencent.com/developer/ask/209791</a></p>
+<p>第一步首先安装gcc，输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">% conda install gcc</span><br></pre></td></tr></table></figure>
+<p>无奈一直卡在<code>soving environment</code>，试了网上的各种方法都没用，有的说这一步要等很长时间，但等了3分钟还在转，索性退出</p>
+<p>我推测可能是anaconda的问题，卸了(参考<a href="https://www.jianshu.com/p/8747a347ea8b" target="_blank" rel="noopener">从Mac中彻底删除Anaconda</a>)后，重新去<a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/" target="_blank" rel="noopener">清华源</a>下了<code>Anaconda3-2019.07</code>版本，当然python还是3.7</p>
+<p>重新运行</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">% conda install gcc</span><br></pre></td></tr></table></figure>
+<p>这次没有在<code>soving environment</code>卡很久，但又报了新的错误：<code>PackagesNotFoundError</code>(晕)</p>
+<hr>
+<p>之后查到的这篇文章完美解决问题：<a href="https://blog.csdn.net/ewba_gis_rs_er/article/details/84671406" target="_blank" rel="noopener">conda install Python库时报PackagesNotFoundError:的错误的解决方案</a></p>
+<p>文章介绍的是windows下的操作方法，但在mac下同样适用</p>
+<ol>
+<li><p>打开<strong>Anaconda Prompt</strong>(mac可在终端输入<code>conda activate</code>进入，前提是已在环境变量中添加conda)，输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">% anaconda search -t conda gcc	//gcc是包名</span><br></pre></td></tr></table></figure>
+<p>结果部分展示如下</p>
+<p><img src="https://s1.ax1x.com/2020/07/21/UIZsYD.png" alt="search" style="zoom:50%;" /></p>
+<p>一共找到了100条记录，每条记录都包含了包的版本、适用系统等信息</p>
+</li>
+<li><p>在其中选择适合的一条，这里一开始我选择的是gcc-5的包,接着在窗口中输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">% anaconda show Name		//Name为在上一步中查找出的包名一栏</span><br></pre></td></tr></table></figure>
+<p>没想到后来安装时又出现了冲突的问题，想到应该是gcc版本的原因，只得选择其他版本，几经试探后最终选择<code>asmeurer/gcc</code>包</p>
+<p>于是输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">% anaconda show asmeurer/gcc</span><br></pre></td></tr></table></figure>
+<p>返回指定包的下载路径</p>
+<p><img src="https://s1.ax1x.com/2020/07/21/UIuph8.png" alt="path" style="zoom:50%;" /></p>
+</li>
+<li><p>在窗口中输入下载指令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">% conda install --channel https://conda.anaconda.org/asmeurer gcc</span><br></pre></td></tr></table></figure>
+<p>gcc下载完毕!</p>
+</li>
+</ol>
+<hr>
+<p>重启pycharm后再输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">% pip install pyhanlp</span><br></pre></td></tr></table></figure>
+<p>提示缺少numpy包，这里先安装numpy后再输入上面的命令即可安装pyhanlp</p>
+<p>根据书上的提示，在terminal中输入<code>hanlp</code>验证安装结果</p>
+<p>第一次运行<code>hanlp</code>会下载数据包，数据包比较大，而终端内下载速度很慢可能下载失败，可以到<a href="https://www.jianshu.com/p/d95200b6f593" target="_blank" rel="noopener">数据预处理之文本处理——hanlp分词</a>这篇文章下找到数据下载链接用迅雷下载</p>
+<p>下载后无需解压，直接放到<code>pyhanlp/static</code>文件中。这里需要注意的是要将文件名的版本号改为和hanlp一致，我的hanlp版本是1.7.8而数据包是1.7.5，如果不改在pycharm运行<code>hanlp</code>会检测是否存在1.7.8版本的数据包，若没找到则仍会重新在终端下载数据包。</p>
+<p>将数据包文件名版本号改为1.7.8后再运行<code>hanlp</code>则会识别数据包文件并自动解压</p>
+<p><img src="https://s1.ax1x.com/2020/07/21/UIsEr9.png" alt="lp" style="zoom:50%;" /></p>
+<p>接下来运行一条分词指令试试吧</p>
+<p><img src="https://s1.ax1x.com/2020/07/21/UIyxhV.png" alt="result" style="zoom:50%;" /></p>
+<p>可以看到分词效果不错，同时在每个词旁都标注了词性</p>
+<p>done！</p>
 ]]></content>
       <categories>
-        <category>hexo</category>
+        <category>bug</category>
+        <category>环境</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
-        <tag>front-matter</tag>
+        <tag>bug</tag>
+        <tag>HanLP</tag>
+        <tag>环境</tag>
+        <tag>《自然语言处理入门》</tag>
+        <tag>NLP</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/07/10/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>markdown语法指南</title>
@@ -160,18 +205,44 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/07/10/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+    <title>hexo之front-matter</title>
+    <url>/2020/07/13/front-matter/</url>
+    <content><![CDATA[<blockquote>
+<p><a href="https://hexo.bootcss.com/docs/front-matter.html" target="_blank" rel="noopener">hexo官方文档</a></p>
+<p>Front-matter 是文件最上方以 <code>---</code> 分隔的区域，用于指定个别文件的变量</p>
+</blockquote>
+<p>在hexo生成文件时，会调用front-matter的参数来完成相关配置</p>
+<p>常用的参数有</p>
+<ul>
+<li>title           标题</li>
+<li>date          建立日期</li>
+<li>comments       评论（如果设置了评论功能可以选择是否开启）</li>
+<li>description      描述（用于指定显示在首页中的文章描述，不会在文章中出现）</li>
+<li><code>tags</code>       标签</li>
+<li><code>categories</code>      分类       </li>
+</ul>
+<p>其中<code>标签</code>和<code>分类</code>需要重点关注，两者概念看似接近，实则不同，用法也有差异</p>
+<p>&nbsp;</p>
+<p>对于<code>标签</code>来说</p>
+<p>​    一篇文章可以有单个或多个标签，多个标签时标签之间是<strong>同级</strong>的</p>
+<p>​    在<code>front-matter</code>中可以通过以下方式生成多个标签<sup><a href="#fn_1" id="reffn_1">1</a></sup></p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">tags: [tag1, tag2, tag3]</span><br></pre></td></tr></table></figure>
+<p>对于<code>分类</code>来说</p>
+<p>​    一篇文章只允许有<strong>一个</strong>分类，不能同时分类到多个类别下，但是可以生成<strong>多级</strong>类别</p>
+<p>​    在<code>front-matter</code>中可以通过以下方式生成多级类别</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">categories:</span><br><span class="line"><span class="bullet">- </span>cat1</span><br><span class="line"><span class="bullet">- </span>cat2</span><br><span class="line"><span class="bullet">- </span>cat3</span><br></pre></td></tr></table></figure>
+<p>​    这样文章就会被归类到<code>cat1</code>下的子类<code>cat2</code>下的子类<code>cat3</code>类别下</p>
+<blockquote id="fn_1">
+<sup>1</sup>. 必须遵守严格的front-matter语法——<code>:</code>后要+<code>空格</code><a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+</blockquote>
 ]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>front-matter</tag>
+      </tags>
   </entry>
   <entry>
     <title>hexo+gitee部署与图床</title>

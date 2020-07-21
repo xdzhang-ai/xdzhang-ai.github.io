@@ -19,25 +19,29 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="markdown语法指南">
+  <meta name="description" content="搭建HanLP环境时遇到的bug">
 <meta property="og:type" content="article">
-<meta property="og:title" content="markdown语法指南">
-<meta property="og:url" content="http://yoursite.com/2020/07/11/markdown-guide/index.html">
+<meta property="og:title" content="谈谈mac python3.7搭建HanLP环境时遇到的坑">
+<meta property="og:url" content="http://yoursite.com/2020/07/21/bug-hanlp-env/index.html">
 <meta property="og:site_name" content="祖安搬砖客">
-<meta property="og:description" content="markdown语法指南">
+<meta property="og:description" content="搭建HanLP环境时遇到的bug">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s1.ax1x.com/2020/07/12/U3kL5Q.jpg">
-<meta property="og:image" content="https://s1.ax1x.com/2020/07/12/U3kL5Q.jpg">
-<meta property="article:published_time" content="2020-07-11T09:29:07.000Z">
-<meta property="article:modified_time" content="2020-07-13T04:02:48.290Z">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/21/UIZsYD.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/21/UIuph8.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/21/UIsEr9.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/21/UIyxhV.png">
+<meta property="article:published_time" content="2020-07-21T02:47:49.000Z">
+<meta property="article:modified_time" content="2020-07-21T06:56:48.125Z">
 <meta property="article:author" content="祖安搬砖客">
-<meta property="article:tag" content="markdown">
-<meta property="article:tag" content="语法">
-<meta property="article:tag" content="typora">
+<meta property="article:tag" content="bug">
+<meta property="article:tag" content="HanLP">
+<meta property="article:tag" content="环境">
+<meta property="article:tag" content="《自然语言处理入门》">
+<meta property="article:tag" content="NLP">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s1.ax1x.com/2020/07/12/U3kL5Q.jpg">
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/07/21/UIZsYD.png">
 
-<link rel="canonical" href="http://yoursite.com/2020/07/11/markdown-guide/">
+<link rel="canonical" href="http://yoursite.com/2020/07/21/bug-hanlp-env/">
 
 
 <script id="page-configurations">
@@ -50,7 +54,7 @@
   };
 </script>
 
-  <title>markdown语法指南 | 祖安搬砖客</title>
+  <title>谈谈mac python3.7搭建HanLP环境时遇到的坑 | 祖安搬砖客</title>
   
 
 
@@ -193,7 +197,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/11/markdown-guide/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/21/bug-hanlp-env/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avatar.jpg">
@@ -206,7 +210,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          markdown语法指南
+          谈谈mac python3.7搭建HanLP环境时遇到的坑
         </h1>
 
         <div class="post-meta">
@@ -215,32 +219,26 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-07-11 17:29:07" itemprop="dateCreated datePublished" datetime="2020-07-11T17:29:07+08:00">2020-07-11</time>
+              <time title="创建时间：2020-07-21 10:47:49 / 修改时间：14:56:48" itemprop="dateCreated datePublished" datetime="2020-07-21T10:47:49+08:00">2020-07-21</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-13 12:02:48" itemprop="dateModified" datetime="2020-07-13T12:02:48+08:00">2020-07-13</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">语言</span></a>
+                  <a href="/categories/bug/" itemprop="url" rel="index"><span itemprop="name">bug</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AF%AD%E8%A8%80/markdown/" itemprop="url" rel="index"><span itemprop="name">markdown</span></a>
+                  <a href="/categories/bug/%E7%8E%AF%E5%A2%83/" itemprop="url" rel="index"><span itemprop="name">环境</span></a>
                 </span>
             </span>
 
           
-            <span id="/2020/07/11/markdown-guide/" class="post-meta-item leancloud_visitors" data-flag-title="markdown语法指南" title="阅读次数">
+            <span id="/2020/07/21/bug-hanlp-env/" class="post-meta-item leancloud_visitors" data-flag-title="谈谈mac python3.7搭建HanLP环境时遇到的坑" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -255,13 +253,13 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/07/11/markdown-guide/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/11/markdown-guide/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/07/21/bug-hanlp-env/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/21/bug-hanlp-env/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-            <div class="post-description">markdown语法指南</div>
+            <div class="post-description">搭建HanLP环境时遇到的bug</div>
 
         </div>
       </header>
@@ -272,75 +270,61 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="markdown语法"><a href="#markdown语法" class="headerlink" title="markdown语法"></a>markdown语法</h1><blockquote>
-<p>mardown编辑器：typora</p>
-<p>环境：hexo博客</p>
+        <blockquote>
+<p>系统：macos Catalina</p>
+<p>环境：</p>
+<p>​    — anaconda:   Anaconda3-2019.07</p>
+<p>​    — python:         3.7</p>
+<p>​    — hanlp:            v1.7.8</p>
 </blockquote>
-<h2 id="1-标题"><a href="#1-标题" class="headerlink" title="1.标题"></a>1.标题</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 一级标题</span></span><br><span class="line"><span class="comment">## 二级标题</span></span><br><span class="line"><span class="comment">### 三级标题</span></span><br><span class="line"><span class="comment">#### 四级标题</span></span><br><span class="line"><span class="comment">##### 五级标题</span></span><br><span class="line"><span class="comment">###### 六级标题</span></span><br></pre></td></tr></table></figure>
-<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><h2 id="2-代码块"><a href="#2-代码块" class="headerlink" title="2.代码块"></a>2.代码块</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">​```python</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">print(<span class="string">'hello world'</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="3-字体修改"><a href="#3-字体修改" class="headerlink" title="3.字体修改"></a>3.字体修改</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">加粗：	  **祖安搬砖客**</span><br><span class="line">高亮：	  ==祖安搬砖客== (在markdown中适用但hexo渲染失败) 建议改为 -&gt; `祖安搬砖客`</span><br><span class="line">删除线：   ~~祖安搬砖客~~</span><br><span class="line">斜体：	   *祖安搬砖客*</span><br></pre></td></tr></table></figure>
-<p><strong>祖安搬砖客</strong><br><code>祖安搬砖客</code><br><del>祖安搬砖客</del><br><em>祖安搬砖客</em></p>
-<h2 id="4-引用"><a href="#4-引用" class="headerlink" title="4.引用"></a>4.引用</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;作者：张三</span><br><span class="line">&gt;&gt;作者：李四</span><br><span class="line">&gt;&gt;&gt;作者：王五</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>作者：张三</p>
-<blockquote>
-<p>作者：李四</p>
-<blockquote>
-<p>作者：王五</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h2 id="5-分割线"><a href="#5-分割线" class="headerlink" title="5.分割线"></a>5.分割线</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">款式<span class="number">1</span>：	***</span><br><span class="line">款式<span class="number">2</span>：	---</span><br></pre></td></tr></table></figure>
+<p>读到何晗《自然语言处理入门》的1.6节要安装开源工具<code>HanLP</code>，而HanLP的python接口由<code>pyhanlp</code>包提供，所以首先要下载pyhanlp，在pycharm的terminal中输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% pip install pyhanlp</span><br></pre></td></tr></table></figure>
+<p>在安装<code>JPype1</code>包时报了一长串的错误，摘录其中关键的错误信息：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">command</span> <span class="string">'gcc'</span> failed with <span class="built_in">exit</span> status 1</span><br></pre></td></tr></table></figure>
+<p>应该是gcc的问题，遂一番百度，找到一个解决方法：<a href="https://cloud.tencent.com/developer/ask/209791" target="_blank" rel="noopener">https://cloud.tencent.com/developer/ask/209791</a></p>
+<p>第一步首先安装gcc，输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% conda install gcc</span><br></pre></td></tr></table></figure>
+<p>无奈一直卡在<code>soving environment</code>，试了网上的各种方法都没用，有的说这一步要等很长时间，但等了3分钟还在转，索性退出</p>
+<p>我推测可能是anaconda的问题，卸了(参考<a href="https://www.jianshu.com/p/8747a347ea8b" target="_blank" rel="noopener">从Mac中彻底删除Anaconda</a>)后，重新去<a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/" target="_blank" rel="noopener">清华源</a>下了<code>Anaconda3-2019.07</code>版本，当然python还是3.7</p>
+<p>重新运行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% conda install gcc</span><br></pre></td></tr></table></figure>
+<p>这次没有在<code>soving environment</code>卡很久，但又报了新的错误：<code>PackagesNotFoundError</code>(晕)</p>
 <hr>
-<hr>
-<h2 id="6-图片"><a href="#6-图片" class="headerlink" title="6.图片"></a>6.<a href="">图片</a></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![照片名](照片路径)</span><br><span class="line">缩放图片： 在输入![照片名](照片路径)后typora会弹出缩放选项</span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2020/07/12/U3kL5Q.jpg" alt="背景" /></p>
-<p>缩放后的图片</p>
-<p><img src="https://s1.ax1x.com/2020/07/12/U3kL5Q.jpg" alt="背景2" style="zoom:20%;" /></p>
-<h2 id="7-链接"><a href="#7-链接" class="headerlink" title="7.链接"></a>7.链接</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[链接名](链接)</span><br></pre></td></tr></table></figure>
-<p><a href="https://github.com/xdzhang-ai" target="_blank" rel="noopener">祖安搬砖客的github</a></p>
-<h2 id="8-脚注"><a href="#8-脚注" class="headerlink" title="8.脚注"></a>8.脚注</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在内容旁添加 [^脚注标号]</span><br><span class="line">在文章末添加 [^脚注标号]: 注释内容	<span class="comment"># 一定要加空格！！！</span></span><br></pre></td></tr></table></figure>
-<p>文章内容<sup><a href="#fn_1" id="reffn_1">1</a></sup></p>
-<p>空白行<sup><a href="#fn_2" id="reffn_2">2</a></sup> </p>
-<p>&nbsp;</p>
-<h2 id="9-列表"><a href="#9-列表" class="headerlink" title="9.列表"></a>9.列表</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">无序列表：</span><br><span class="line">    - 元素<span class="number">1</span></span><br><span class="line">    - 元素<span class="number">2</span></span><br><span class="line">    - 元素<span class="number">3</span></span><br><span class="line">有序列表：</span><br><span class="line">    <span class="number">1.</span> 元素<span class="number">1</span></span><br><span class="line">    <span class="number">2.</span> 元素<span class="number">2</span></span><br><span class="line">    <span class="number">3.</span> 元素<span class="number">3</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>昨天</li>
-<li>今天</li>
-<li>明天</li>
-</ul>
+<p>之后查到的这篇文章完美解决问题：<a href="https://blog.csdn.net/ewba_gis_rs_er/article/details/84671406" target="_blank" rel="noopener">conda install Python库时报PackagesNotFoundError:的错误的解决方案</a></p>
+<p>文章介绍的是windows下的操作方法，但在mac下同样适用</p>
 <ol>
-<li>大</li>
-<li>中</li>
-<li>小</li>
+<li><p>打开<strong>Anaconda Prompt</strong>(mac可在终端输入<code>conda activate</code>进入，前提是已在环境变量中添加conda)，输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% anaconda search -t conda gcc	//gcc是包名</span><br></pre></td></tr></table></figure>
+<p>结果部分展示如下</p>
+<p><img src="https://s1.ax1x.com/2020/07/21/UIZsYD.png" alt="search" style="zoom:50%;" /></p>
+<p>一共找到了100条记录，每条记录都包含了包的版本、适用系统等信息</p>
+</li>
+<li><p>在其中选择适合的一条，这里一开始我选择的是gcc-5的包,接着在窗口中输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% anaconda show Name		//Name为在上一步中查找出的包名一栏</span><br></pre></td></tr></table></figure>
+<p>没想到后来安装时又出现了冲突的问题，想到应该是gcc版本的原因，只得选择其他版本，几经试探后最终选择<code>asmeurer/gcc</code>包</p>
+<p>于是输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% anaconda show asmeurer/gcc</span><br></pre></td></tr></table></figure>
+<p>返回指定包的下载路径</p>
+<p><img src="https://s1.ax1x.com/2020/07/21/UIuph8.png" alt="path" style="zoom:50%;" /></p>
+</li>
+<li><p>在窗口中输入下载指令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% conda install --channel https://conda.anaconda.org/asmeurer gcc</span><br></pre></td></tr></table></figure>
+<p>gcc下载完毕!</p>
+</li>
 </ol>
-<h2 id="10-表格"><a href="#10-表格" class="headerlink" title="10.表格"></a>10.表格</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">建议使用typora中的插入表格</span><br></pre></td></tr></table></figure>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">性别</th>
-<th style="text-align:center">男</th>
-<th style="text-align:center">女</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">年龄</td>
-<td style="text-align:center">23</td>
-<td style="text-align:center">21</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>注：在typora中按住command+/可显示markdown源码</strong></p>
-<blockquote id="fn_1">
-<sup>1</sup>.  脚注测试，访问<a href="https://xdzhang-ai.github.io/2020/07/11/markdown-guide/" target="_blank" rel="noopener">markdown语法指南</a>获取更多内容<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_2">
-<sup>2</sup>. 使用<code>&amp;nbsp;</code>产生空白行<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
-</blockquote>
+<hr>
+<p>重启pycharm后再输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% pip install pyhanlp</span><br></pre></td></tr></table></figure>
+<p>提示缺少numpy包，这里先安装numpy后再输入上面的命令即可安装pyhanlp</p>
+<p>根据书上的提示，在terminal中输入<code>hanlp</code>验证安装结果</p>
+<p>第一次运行<code>hanlp</code>会下载数据包，数据包比较大，而终端内下载速度很慢可能下载失败，可以到<a href="https://www.jianshu.com/p/d95200b6f593" target="_blank" rel="noopener">数据预处理之文本处理——hanlp分词</a>这篇文章下找到数据下载链接用迅雷下载</p>
+<p>下载后无需解压，直接放到<code>pyhanlp/static</code>文件中。这里需要注意的是要将文件名的版本号改为和hanlp一致，我的hanlp版本是1.7.8而数据包是1.7.5，如果不改在pycharm运行<code>hanlp</code>会检测是否存在1.7.8版本的数据包，若没找到则仍会重新在终端下载数据包。</p>
+<p>将数据包文件名版本号改为1.7.8后再运行<code>hanlp</code>则会识别数据包文件并自动解压</p>
+<p><img src="https://s1.ax1x.com/2020/07/21/UIsEr9.png" alt="lp" style="zoom:50%;" /></p>
+<p>接下来运行一条分词指令试试吧</p>
+<p><img src="https://s1.ax1x.com/2020/07/21/UIyxhV.png" alt="result" style="zoom:50%;" /></p>
+<p>可以看到分词效果不错，同时在每个词旁都标注了词性</p>
+<p>done！</p>
 
     </div>
 
@@ -383,7 +367,7 @@
               </li>
               <li class="post-copyright-link">
                 <strong>本文链接：</strong>
-                <a href="/2020/07/11/markdown-guide/" title="markdown语法指南">https://xdzhang-ai.github.io/2020/07/11/markdown-guide/</a>
+                <a href="/2020/07/21/bug-hanlp-env/" title="谈谈mac python3.7搭建HanLP环境时遇到的坑">https://xdzhang-ai.github.io/2020/07/21/bug-hanlp-env/</a>
               </li>
               <li class="post-copyright-license">
                 <strong>版权： </strong>
@@ -395,9 +379,11 @@
          
         </div>
           <div class="post-tags">
-              <a href="/tags/markdown/" rel="tag"># markdown</a>
-              <a href="/tags/%E8%AF%AD%E6%B3%95/" rel="tag"># 语法</a>
-              <a href="/tags/typora/" rel="tag"># typora</a>
+              <a href="/tags/bug/" rel="tag"># bug</a>
+              <a href="/tags/HanLP/" rel="tag"># HanLP</a>
+              <a href="/tags/%E7%8E%AF%E5%A2%83/" rel="tag"># 环境</a>
+              <a href="/tags/%E3%80%8A%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%85%A5%E9%97%A8%E3%80%8B/" rel="tag"># 《自然语言处理入门》</a>
+              <a href="/tags/NLP/" rel="tag"># NLP</a>
           </div>
 
         
@@ -406,13 +392,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/07/10/hello-world/" rel="prev" title="Hello World">
-      <i class="fa fa-chevron-left"></i> Hello World
+    <a href="/2020/07/19/pycharm-theme/" rel="prev" title="一款好看的pycharm主题Atom One Dark">
+      <i class="fa fa-chevron-left"></i> 一款好看的pycharm主题Atom One Dark
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/07/12/%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%9B%BE%E5%BA%8A/" rel="next" title="hexo+gitee部署与图床">
-      hexo+gitee部署与图床 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -472,7 +455,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#markdown语法"><span class="nav-number">1.</span> <span class="nav-text">markdown语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-标题"><span class="nav-number">1.1.</span> <span class="nav-text">1.标题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一级标题"><span class="nav-number">2.</span> <span class="nav-text">一级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#二级标题"><span class="nav-number">2.1.</span> <span class="nav-text">二级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三级标题"><span class="nav-number">2.1.1.</span> <span class="nav-text">三级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#四级标题"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">四级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#五级标题"><span class="nav-number">2.1.1.1.1.</span> <span class="nav-text">五级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#六级标题"><span class="nav-number">2.1.1.1.1.1.</span> <span class="nav-text">六级标题</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-代码块"><span class="nav-number">2.2.</span> <span class="nav-text">2.代码块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-字体修改"><span class="nav-number">2.3.</span> <span class="nav-text">3.字体修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-引用"><span class="nav-number">2.4.</span> <span class="nav-text">4.引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-分割线"><span class="nav-number">2.5.</span> <span class="nav-text">5.分割线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-图片"><span class="nav-number">2.6.</span> <span class="nav-text">6.图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-链接"><span class="nav-number">2.7.</span> <span class="nav-text">7.链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-脚注"><span class="nav-number">2.8.</span> <span class="nav-text">8.脚注</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-列表"><span class="nav-number">2.9.</span> <span class="nav-text">9.列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-表格"><span class="nav-number">2.10.</span> <span class="nav-text">10.表格</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
