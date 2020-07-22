@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>mac Catalina环境变量配置</title>
+    <url>/2020/07/22/bug-envpara/</url>
+    <content><![CDATA[<h2 id="mac下添加环境变量"><a href="#mac下添加环境变量" class="headerlink" title="mac下添加环境变量"></a>mac下添加环境变量</h2><blockquote>
+<p>转载：<a href="https://www.jianshu.com/p/463244ec27e3" target="_blank" rel="noopener">mac下添加环境变量</a></p>
+</blockquote>
+<p>在<code>~/.bash_profile</code>中添加环境变量后使用</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">% <span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure>
+<p>使文件生效</p>
+<p>使用</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">% <span class="built_in">echo</span> <span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+<p>查看配置的环境变量路径是否已经添加进去了</p>
+<p>&nbsp;</p>
+<p><strong>但是！</strong></p>
+<p>等重启terminal后又失效了，原因：</p>
+<blockquote>
+<p>转载：<a href="https://www.cnblogs.com/yjjs2020/p/11708212.html" target="_blank" rel="noopener">MacOS Catalina之Terminal配置</a></p>
+</blockquote>
+<p>macos在Catalina中把bash改为<code>zsh</code>了，每次启动都会加载<code>~/.zshrc</code>文件</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><ol>
+<li>将环境变量加入到<code>zshrc</code>文件中</li>
+<li>在<code>zshrc</code>文件中添加source <code>~/.bash_profile</code></li>
+</ol>
+]]></content>
+      <categories>
+        <category>bug</category>
+        <category>环境</category>
+      </categories>
+      <tags>
+        <tag>环境</tag>
+        <tag>macos</tag>
+        <tag>Catalina</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>谈谈mac python3.7搭建HanLP环境时遇到的坑</title>
     <url>/2020/07/21/bug-hanlp-env/</url>
     <content><![CDATA[<blockquote>
@@ -64,11 +98,51 @@
         <category>环境</category>
       </categories>
       <tags>
+        <tag>环境</tag>
         <tag>bug</tag>
         <tag>HanLP</tag>
-        <tag>环境</tag>
         <tag>《自然语言处理入门》</tag>
         <tag>NLP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo之front-matter</title>
+    <url>/2020/07/13/front-matter/</url>
+    <content><![CDATA[<blockquote>
+<p><a href="https://hexo.bootcss.com/docs/front-matter.html" target="_blank" rel="noopener">hexo官方文档</a></p>
+<p>Front-matter 是文件最上方以 <code>---</code> 分隔的区域，用于指定个别文件的变量</p>
+</blockquote>
+<p>在hexo生成文件时，会调用front-matter的参数来完成相关配置</p>
+<p>常用的参数有</p>
+<ul>
+<li>title           标题</li>
+<li>date          建立日期</li>
+<li>comments       评论（如果设置了评论功能可以选择是否开启）</li>
+<li>description      描述（用于指定显示在首页中的文章描述，不会在文章中出现）</li>
+<li><code>tags</code>       标签</li>
+<li><code>categories</code>      分类       </li>
+</ul>
+<p>其中<code>标签</code>和<code>分类</code>需要重点关注，两者概念看似接近，实则不同，用法也有差异</p>
+<p>&nbsp;</p>
+<p>对于<code>标签</code>来说</p>
+<p>​    一篇文章可以有单个或多个标签，多个标签时标签之间是<strong>同级</strong>的</p>
+<p>​    在<code>front-matter</code>中可以通过以下方式生成多个标签<sup><a href="#fn_1" id="reffn_1">1</a></sup></p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">tags: [tag1, tag2, tag3]</span><br></pre></td></tr></table></figure>
+<p>对于<code>分类</code>来说</p>
+<p>​    一篇文章只允许有<strong>一个</strong>分类，不能同时分类到多个类别下，但是可以生成<strong>多级</strong>类别</p>
+<p>​    在<code>front-matter</code>中可以通过以下方式生成多级类别</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">categories:</span><br><span class="line"><span class="bullet">- </span>cat1</span><br><span class="line"><span class="bullet">- </span>cat2</span><br><span class="line"><span class="bullet">- </span>cat3</span><br></pre></td></tr></table></figure>
+<p>​    这样文章就会被归类到<code>cat1</code>下的子类<code>cat2</code>下的子类<code>cat3</code>类别下</p>
+<blockquote id="fn_1">
+<sup>1</sup>. 必须遵守严格的front-matter语法——<code>:</code>后要+<code>空格</code><a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+</blockquote>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>front-matter</tag>
       </tags>
   </entry>
   <entry>
@@ -202,46 +276,6 @@
       <tags>
         <tag>主题</tag>
         <tag>pycharm</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo之front-matter</title>
-    <url>/2020/07/13/front-matter/</url>
-    <content><![CDATA[<blockquote>
-<p><a href="https://hexo.bootcss.com/docs/front-matter.html" target="_blank" rel="noopener">hexo官方文档</a></p>
-<p>Front-matter 是文件最上方以 <code>---</code> 分隔的区域，用于指定个别文件的变量</p>
-</blockquote>
-<p>在hexo生成文件时，会调用front-matter的参数来完成相关配置</p>
-<p>常用的参数有</p>
-<ul>
-<li>title           标题</li>
-<li>date          建立日期</li>
-<li>comments       评论（如果设置了评论功能可以选择是否开启）</li>
-<li>description      描述（用于指定显示在首页中的文章描述，不会在文章中出现）</li>
-<li><code>tags</code>       标签</li>
-<li><code>categories</code>      分类       </li>
-</ul>
-<p>其中<code>标签</code>和<code>分类</code>需要重点关注，两者概念看似接近，实则不同，用法也有差异</p>
-<p>&nbsp;</p>
-<p>对于<code>标签</code>来说</p>
-<p>​    一篇文章可以有单个或多个标签，多个标签时标签之间是<strong>同级</strong>的</p>
-<p>​    在<code>front-matter</code>中可以通过以下方式生成多个标签<sup><a href="#fn_1" id="reffn_1">1</a></sup></p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">tags: [tag1, tag2, tag3]</span><br></pre></td></tr></table></figure>
-<p>对于<code>分类</code>来说</p>
-<p>​    一篇文章只允许有<strong>一个</strong>分类，不能同时分类到多个类别下，但是可以生成<strong>多级</strong>类别</p>
-<p>​    在<code>front-matter</code>中可以通过以下方式生成多级类别</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">categories:</span><br><span class="line"><span class="bullet">- </span>cat1</span><br><span class="line"><span class="bullet">- </span>cat2</span><br><span class="line"><span class="bullet">- </span>cat3</span><br></pre></td></tr></table></figure>
-<p>​    这样文章就会被归类到<code>cat1</code>下的子类<code>cat2</code>下的子类<code>cat3</code>类别下</p>
-<blockquote id="fn_1">
-<sup>1</sup>. 必须遵守严格的front-matter语法——<code>:</code>后要+<code>空格</code><a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
-</blockquote>
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>front-matter</tag>
       </tags>
   </entry>
   <entry>
