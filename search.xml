@@ -1,40 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>mac Catalina环境变量配置</title>
-    <url>/2020/07/22/bug-envpara/</url>
-    <content><![CDATA[<h2 id="mac下添加环境变量"><a href="#mac下添加环境变量" class="headerlink" title="mac下添加环境变量"></a>mac下添加环境变量</h2><blockquote>
-<p>转载：<a href="https://www.jianshu.com/p/463244ec27e3" target="_blank" rel="noopener">mac下添加环境变量</a></p>
-</blockquote>
-<p>在<code>~/.bash_profile</code>中添加环境变量后使用</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">% <span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure>
-<p>使文件生效</p>
-<p>使用</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">% <span class="built_in">echo</span> <span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
-<p>查看配置的环境变量路径是否已经添加进去了</p>
-<p>&nbsp;</p>
-<p><strong>但是！</strong></p>
-<p>等重启terminal后又失效了，原因：</p>
-<blockquote>
-<p>转载：<a href="https://www.cnblogs.com/yjjs2020/p/11708212.html" target="_blank" rel="noopener">MacOS Catalina之Terminal配置</a></p>
-</blockquote>
-<p>macos在Catalina中把bash改为<code>zsh</code>了，每次启动都会加载<code>~/.zshrc</code>文件</p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><ol>
-<li>将环境变量加入到<code>zshrc</code>文件中</li>
-<li>在<code>zshrc</code>文件中添加source <code>~/.bash_profile</code></li>
-</ol>
-]]></content>
-      <categories>
-        <category>bug</category>
-        <category>环境</category>
-      </categories>
-      <tags>
-        <tag>环境</tag>
-        <tag>macos</tag>
-        <tag>Catalina</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>谈谈mac python3.7搭建HanLP环境时遇到的坑</title>
     <url>/2020/07/21/bug-hanlp-env/</url>
     <content><![CDATA[<blockquote>
@@ -98,11 +64,45 @@
         <category>环境</category>
       </categories>
       <tags>
-        <tag>环境</tag>
         <tag>bug</tag>
         <tag>HanLP</tag>
+        <tag>环境</tag>
         <tag>《自然语言处理入门》</tag>
         <tag>NLP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mac Catalina环境变量配置</title>
+    <url>/2020/07/22/bug-envpara/</url>
+    <content><![CDATA[<h2 id="mac下添加环境变量"><a href="#mac下添加环境变量" class="headerlink" title="mac下添加环境变量"></a>mac下添加环境变量</h2><blockquote>
+<p>转载：<a href="https://www.jianshu.com/p/463244ec27e3" target="_blank" rel="noopener">mac下添加环境变量</a></p>
+</blockquote>
+<p>在<code>~/.bash_profile</code>中添加环境变量后使用</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">% <span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure>
+<p>使文件生效</p>
+<p>使用</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">% <span class="built_in">echo</span> <span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+<p>查看配置的环境变量路径是否已经添加进去了</p>
+<p>&nbsp;</p>
+<p><strong>但是！</strong></p>
+<p>等重启terminal后又失效了，原因：</p>
+<blockquote>
+<p>转载：<a href="https://www.cnblogs.com/yjjs2020/p/11708212.html" target="_blank" rel="noopener">MacOS Catalina之Terminal配置</a></p>
+</blockquote>
+<p>macos在Catalina中把bash改为<code>zsh</code>了，每次启动都会加载<code>~/.zshrc</code>文件</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><ol>
+<li>将环境变量加入到<code>zshrc</code>文件中</li>
+<li>在<code>zshrc</code>文件中添加source <code>~/.bash_profile</code></li>
+</ol>
+]]></content>
+      <categories>
+        <category>bug</category>
+        <category>环境</category>
+      </categories>
+      <tags>
+        <tag>环境</tag>
+        <tag>macos</tag>
+        <tag>Catalina</tag>
       </tags>
   </entry>
   <entry>
@@ -158,89 +158,6 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>markdown语法指南</title>
-    <url>/2020/07/11/markdown-guide/</url>
-    <content><![CDATA[<h1 id="markdown语法"><a href="#markdown语法" class="headerlink" title="markdown语法"></a>markdown语法</h1><blockquote>
-<p>mardown编辑器：typora</p>
-<p>环境：hexo博客</p>
-</blockquote>
-<h2 id="1-标题"><a href="#1-标题" class="headerlink" title="1.标题"></a>1.标题</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 一级标题</span></span><br><span class="line"><span class="comment">## 二级标题</span></span><br><span class="line"><span class="comment">### 三级标题</span></span><br><span class="line"><span class="comment">#### 四级标题</span></span><br><span class="line"><span class="comment">##### 五级标题</span></span><br><span class="line"><span class="comment">###### 六级标题</span></span><br></pre></td></tr></table></figure>
-<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><h2 id="2-代码块"><a href="#2-代码块" class="headerlink" title="2.代码块"></a>2.代码块</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">​```python</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">print(<span class="string">'hello world'</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="3-字体修改"><a href="#3-字体修改" class="headerlink" title="3.字体修改"></a>3.字体修改</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">加粗：	  **祖安搬砖客**</span><br><span class="line">高亮：	  ==祖安搬砖客== (在markdown中适用但hexo渲染失败) 建议改为 -&gt; `祖安搬砖客`</span><br><span class="line">删除线：   ~~祖安搬砖客~~</span><br><span class="line">斜体：	   *祖安搬砖客*</span><br></pre></td></tr></table></figure>
-<p><strong>祖安搬砖客</strong><br><code>祖安搬砖客</code><br><del>祖安搬砖客</del><br><em>祖安搬砖客</em></p>
-<h2 id="4-引用"><a href="#4-引用" class="headerlink" title="4.引用"></a>4.引用</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&gt;作者：张三</span><br><span class="line">&gt;&gt;作者：李四</span><br><span class="line">&gt;&gt;&gt;作者：王五</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>作者：张三</p>
-<blockquote>
-<p>作者：李四</p>
-<blockquote>
-<p>作者：王五</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h2 id="5-分割线"><a href="#5-分割线" class="headerlink" title="5.分割线"></a>5.分割线</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">款式<span class="number">1</span>：	***</span><br><span class="line">款式<span class="number">2</span>：	---</span><br></pre></td></tr></table></figure>
-<hr>
-<hr>
-<h2 id="6-图片"><a href="#6-图片" class="headerlink" title="6.图片"></a>6.<a href="">图片</a></h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">![照片名](照片路径)</span><br><span class="line">缩放图片： 在输入![照片名](照片路径)后typora会弹出缩放选项</span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2020/07/12/U3kL5Q.jpg" alt="背景" /></p>
-<p>缩放后的图片</p>
-<p><img src="https://s1.ax1x.com/2020/07/12/U3kL5Q.jpg" alt="背景2" style="zoom:20%;" /></p>
-<h2 id="7-链接"><a href="#7-链接" class="headerlink" title="7.链接"></a>7.链接</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">[链接名](链接)</span><br></pre></td></tr></table></figure>
-<p><a href="https://github.com/xdzhang-ai" target="_blank" rel="noopener">祖安搬砖客的github</a></p>
-<h2 id="8-脚注"><a href="#8-脚注" class="headerlink" title="8.脚注"></a>8.脚注</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">在内容旁添加 [^脚注标号]</span><br><span class="line">在文章末添加 [^脚注标号]: 注释内容	<span class="comment"># 一定要加空格！！！</span></span><br></pre></td></tr></table></figure>
-<p>文章内容<sup><a href="#fn_1" id="reffn_1">1</a></sup></p>
-<p>空白行<sup><a href="#fn_2" id="reffn_2">2</a></sup> </p>
-<p>&nbsp;</p>
-<h2 id="9-列表"><a href="#9-列表" class="headerlink" title="9.列表"></a>9.列表</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">无序列表：</span><br><span class="line">    - 元素<span class="number">1</span></span><br><span class="line">    - 元素<span class="number">2</span></span><br><span class="line">    - 元素<span class="number">3</span></span><br><span class="line">有序列表：</span><br><span class="line">    <span class="number">1.</span> 元素<span class="number">1</span></span><br><span class="line">    <span class="number">2.</span> 元素<span class="number">2</span></span><br><span class="line">    <span class="number">3.</span> 元素<span class="number">3</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>昨天</li>
-<li>今天</li>
-<li>明天</li>
-</ul>
-<ol>
-<li>大</li>
-<li>中</li>
-<li>小</li>
-</ol>
-<h2 id="10-表格"><a href="#10-表格" class="headerlink" title="10.表格"></a>10.表格</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">建议使用typora中的插入表格</span><br></pre></td></tr></table></figure>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">性别</th>
-<th style="text-align:center">男</th>
-<th style="text-align:center">女</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">年龄</td>
-<td style="text-align:center">23</td>
-<td style="text-align:center">21</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>注：在typora中按住command+/可显示markdown源码</strong></p>
-<blockquote id="fn_1">
-<sup>1</sup>.  脚注测试，访问<a href="https://xdzhang-ai.github.io/2020/07/11/markdown-guide/" target="_blank" rel="noopener">markdown语法指南</a>获取更多内容<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_2">
-<sup>2</sup>. 使用<code>&amp;nbsp;</code>产生空白行<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
-</blockquote>
-]]></content>
-      <categories>
-        <category>语言</category>
-        <category>markdown</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
-        <tag>语法</tag>
-        <tag>typora</tag>
-      </tags>
   </entry>
   <entry>
     <title>一款好看的pycharm主题Atom One Dark</title>
@@ -344,6 +261,89 @@
         <tag>hexo</tag>
         <tag>gitee</tag>
         <tag>图床</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>markdown语法指南</title>
+    <url>/2020/07/11/markdown-guide/</url>
+    <content><![CDATA[<h1 id="markdown语法"><a href="#markdown语法" class="headerlink" title="markdown语法"></a>markdown语法</h1><blockquote>
+<p>mardown编辑器：typora</p>
+<p>环境：hexo博客</p>
+</blockquote>
+<h2 id="1-标题"><a href="#1-标题" class="headerlink" title="1.标题"></a>1.标题</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 一级标题</span></span><br><span class="line"><span class="comment">## 二级标题</span></span><br><span class="line"><span class="comment">### 三级标题</span></span><br><span class="line"><span class="comment">#### 四级标题</span></span><br><span class="line"><span class="comment">##### 五级标题</span></span><br><span class="line"><span class="comment">###### 六级标题</span></span><br></pre></td></tr></table></figure>
+<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><h2 id="2-代码块"><a href="#2-代码块" class="headerlink" title="2.代码块"></a>2.代码块</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">​```python</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">print(<span class="string">'hello world'</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="3-字体修改"><a href="#3-字体修改" class="headerlink" title="3.字体修改"></a>3.字体修改</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">加粗：	  **祖安搬砖客**</span><br><span class="line">高亮：	  ==祖安搬砖客== (在markdown中适用但hexo渲染失败) 建议改为 -&gt; `祖安搬砖客`</span><br><span class="line">删除线：   ~~祖安搬砖客~~</span><br><span class="line">斜体：	   *祖安搬砖客*</span><br></pre></td></tr></table></figure>
+<p><strong>祖安搬砖客</strong><br><code>祖安搬砖客</code><br><del>祖安搬砖客</del><br><em>祖安搬砖客</em></p>
+<h2 id="4-引用"><a href="#4-引用" class="headerlink" title="4.引用"></a>4.引用</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&gt;作者：张三</span><br><span class="line">&gt;&gt;作者：李四</span><br><span class="line">&gt;&gt;&gt;作者：王五</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>作者：张三</p>
+<blockquote>
+<p>作者：李四</p>
+<blockquote>
+<p>作者：王五</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="5-分割线"><a href="#5-分割线" class="headerlink" title="5.分割线"></a>5.分割线</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">款式<span class="number">1</span>：	***</span><br><span class="line">款式<span class="number">2</span>：	---</span><br></pre></td></tr></table></figure>
+<hr>
+<hr>
+<h2 id="6-图片"><a href="#6-图片" class="headerlink" title="6.图片"></a>6.<a href="">图片</a></h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">![照片名](照片路径)</span><br><span class="line">缩放图片： 在输入![照片名](照片路径)后typora会弹出缩放选项</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2020/07/12/U3kL5Q.jpg" alt="背景" /></p>
+<p>缩放后的图片</p>
+<p><img src="https://s1.ax1x.com/2020/07/12/U3kL5Q.jpg" alt="背景2" style="zoom:20%;" /></p>
+<h2 id="7-链接"><a href="#7-链接" class="headerlink" title="7.链接"></a>7.链接</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">[链接名](链接)</span><br></pre></td></tr></table></figure>
+<p><a href="https://github.com/xdzhang-ai" target="_blank" rel="noopener">祖安搬砖客的github</a></p>
+<h2 id="8-脚注"><a href="#8-脚注" class="headerlink" title="8.脚注"></a>8.脚注</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">在内容旁添加 [^脚注标号]</span><br><span class="line">在文章末添加 [^脚注标号]: 注释内容	<span class="comment"># 一定要加空格！！！</span></span><br></pre></td></tr></table></figure>
+<p>文章内容<sup><a href="#fn_1" id="reffn_1">1</a></sup></p>
+<p>空白行<sup><a href="#fn_2" id="reffn_2">2</a></sup> </p>
+<p>&nbsp;</p>
+<h2 id="9-列表"><a href="#9-列表" class="headerlink" title="9.列表"></a>9.列表</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">无序列表：</span><br><span class="line">    - 元素<span class="number">1</span></span><br><span class="line">    - 元素<span class="number">2</span></span><br><span class="line">    - 元素<span class="number">3</span></span><br><span class="line">有序列表：</span><br><span class="line">    <span class="number">1.</span> 元素<span class="number">1</span></span><br><span class="line">    <span class="number">2.</span> 元素<span class="number">2</span></span><br><span class="line">    <span class="number">3.</span> 元素<span class="number">3</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>昨天</li>
+<li>今天</li>
+<li>明天</li>
+</ul>
+<ol>
+<li>大</li>
+<li>中</li>
+<li>小</li>
+</ol>
+<h2 id="10-表格"><a href="#10-表格" class="headerlink" title="10.表格"></a>10.表格</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">建议使用typora中的插入表格</span><br></pre></td></tr></table></figure>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">性别</th>
+<th style="text-align:center">男</th>
+<th style="text-align:center">女</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">年龄</td>
+<td style="text-align:center">23</td>
+<td style="text-align:center">21</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>注：在typora中按住command+/可显示markdown源码</strong></p>
+<blockquote id="fn_1">
+<sup>1</sup>.  脚注测试，访问<a href="https://xdzhang-ai.github.io/2020/07/11/markdown-guide/" target="_blank" rel="noopener">markdown语法指南</a>获取更多内容<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_2">
+<sup>2</sup>. 使用<code>&amp;nbsp;</code>产生空白行<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
+</blockquote>
+]]></content>
+      <categories>
+        <category>语言</category>
+        <category>markdown</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+        <tag>语法</tag>
+        <tag>typora</tag>
       </tags>
   </entry>
 </search>
