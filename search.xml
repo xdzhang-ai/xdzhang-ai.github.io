@@ -1,6 +1,317 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>《自然语言处理入门》(一) 新手上路</title>
+    <url>/2020/07/23/INLP-01/</url>
+    <content><![CDATA[<p>​    </p>
+<h2 id="新手上路"><a href="#新手上路" class="headerlink" title="新手上路"></a>新手上路</h2><p>​    与很多技术书籍一样，第一章并未涉及到工程上的实现与算法推导，而是对自然语言处理领域概念的罗列与介绍，因此章名取为“新手上路”旨在快速带着读者走进NLP的世界</p>
+<hr>
+<p><strong>自然语言处理</strong> (Natural Language Processing，NLP)是一门􏰋融合了计算机科学、人工智能以及语言学的交叉学科，它们的关系如下图所示</p>
+<p><img src="https://s1.ax1x.com/2020/07/23/UqJRsA.png" alt="ven"></p>
+<h3 id="自然语言与编程语言"><a href="#自然语言与编程语言" class="headerlink" title="自然语言与编程语言"></a>自然语言与编程语言</h3><p>自然语言——N</p>
+<p>编程语言——P</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">区别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">词汇量</td>
+<td style="text-align:center">N的词汇量大，关键词比P丰富；P的关键词有限且确定(void、main)</td>
+</tr>
+<tr>
+<td style="text-align:center">结构化</td>
+<td style="text-align:center">N非结构化，无明确结构关系； P是结构化的，具有显式结构(class/module)</td>
+</tr>
+<tr>
+<td style="text-align:center">歧义性</td>
+<td style="text-align:center">N含有大量歧义(多义词)；P无歧义，若两个函数签名一样会触发编译错误</td>
+</tr>
+<tr>
+<td style="text-align:center">容错性</td>
+<td style="text-align:center">N中一句话错得再离谱，还是可以猜出它的意思；P中若发生拼写或语法错误则会产生bug</td>
+</tr>
+<tr>
+<td style="text-align:center">易变性</td>
+<td style="text-align:center">N变化剧烈，不断创造新词汇；P从旧版本到新版本迭代较缓和(C++ 98-&gt;03-&gt;11-&gt;14)</td>
+</tr>
+<tr>
+<td style="text-align:center">简略性</td>
+<td style="text-align:center">N简洁干练(“老地方见”)，交流双方依托经验及对上下文理解使得N不必指示明确</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>总结</strong>：相对于编程语言，自然语言复杂的多，计算机理解自然语言也非常困难</p>
+<h3 id="自然语言处理的层次"><a href="#自然语言处理的层次" class="headerlink" title="自然语言处理的层次"></a>自然语言处理的层次</h3><p>按照处理对象的颗粒度，自然语言处理大致可以分为</p>
+<p><img src="https://s1.ax1x.com/2020/07/23/UqBBdJ.png" alt="layer"></p>
+<ol>
+<li><p><strong>语音、图像和文本</strong></p>
+<p>自然语言处理系统的输入源一共有 3 个，即语音、图像与文本。其中，语音和图像一般经过识别后转化为文本，再进行接下来的处理，分别称为<strong>语音识别</strong>和<strong>光学字符识别</strong></p>
+</li>
+<li><p><strong>中文分词、词性标注和命名实体识别</strong></p>
+<p>这 3 个任务都是<code>围绕词语</code>进行的分析，所以统称<strong>词法分析</strong></p>
+<p><strong>中文分词</strong>：将文本分隔为有意义的词语</p>
+<p><strong>词性标注</strong>：确定每个词语的类别和浅层的歧义消除</p>
+<p><strong>命名实体识别</strong>：识别出一些较长的专有名词</p>
+<p>对中文而言，词法分析常常是后续高级任务的基础，所幸中文词法分析已经比较成熟</p>
+</li>
+<li><p><strong>信息抽取</strong></p>
+<p>词法分析之后，文本已经呈现出部分结构化的趋势。计算机看到的不再是一个超长的字符串，而是有意义的单词列表，并且每个单词还附有自己的词性以及其他标签</p>
+<p>根据这些单词与标签，我们可以抽取出一部分有用的信息，从简单的高频词到高级算法提取出的关键词，从公司名称到专业术语</p>
+<p>还可以 根据词语之间的统计学信息抽取出关键短语乃至句子，更大颗粒度的文本对用户更加友好</p>
+</li>
+<li><p><strong>文本分类与聚类</strong></p>
+<p>指的是在<code>文章级别</code>做一系列分析</p>
+<p><strong>文本分类</strong>：把许多文档<code>分门别类</code>的整理一下（判断一句话褒贬，一封邮件是否是垃圾邮件）</p>
+<p><strong>文本聚类</strong>：把相似的文本归档到一起，或者排除重复的文档，而不关心具体类别</p>
+<p>PS:分类有类别目标，类别由人为设定，而聚类没有；前者为监督学习，后者为无监督学习</p>
+</li>
+<li><p><strong>句法分析</strong></p>
+<p>词法分析只能得到零散的词汇信息，计算机不知道<code>词语之间</code>的关系。通过<strong>句法分析</strong>可以得到句子的主谓宾结构。</p>
+<p>比如“查询刘医生主治的内科病人”这句话，通过句法分析后可得</p>
+<p><img src="https://s1.ax1x.com/2020/07/23/UqhOX9.png" alt="sentence"></p>
+</li>
+<li><p><strong>语义分析与篇章分析</strong></p>
+<p>相较于句法分析，语义分析侧重语义而非语法，包括：</p>
+<p><strong>词义消歧</strong>：确定一个词在语境中的含义，而不是简单的词性</p>
+<p><strong>语义角色标注</strong>：标注句子中的谓语与其他成分的关系</p>
+<p><strong>语义依存分析</strong>：分析句子中词语之间的语义关系</p>
+<p>随着任务的递进，它们的难度也逐步上升，属于较为高级的课题。即便是最前沿的研究， 也尚未达到能够实用的精确程度</p>
+</li>
+<li><p><strong>其他高级任务</strong></p>
+<p>还有许多综合性的任务，与终端应用级产品联系更紧密。比如：</p>
+<p><strong>自动问答</strong>：根据知识库或文本中的信息直接回答一个问题，比如微软的Cortana和苹果的Siri</p>
+<p><strong>自动摘要</strong>：为一篇长文档生成简短的摘要</p>
+<p><strong>机器翻译</strong>：将一句话从一种语言翻译到另一种语言</p>
+</li>
+</ol>
+<h3 id="自然语言处理的流派"><a href="#自然语言处理的流派" class="headerlink" title="自然语言处理的流派"></a>自然语言处理的流派</h3><ol>
+<li><p><strong>基于规则的专家系统</strong></p>
+<p>规则，指的是<code>由专家手工制定的确定性流程</code>。小到程序员日常使用的正则表达式，大到飞机的自动驾驶仪，都是固定的规则系统</p>
+<p>典型案例有波特词干算法(Porter stemming algorithm)</p>
+<p><img src="https://s1.ax1x.com/2020/07/23/ULJccQ.png" alt="porter"></p>
+<p>专家系统难以拓展，容易冲突(比如feed这个单词)，需要考虑的兼容性问题很多，非常复杂，维护成本较高</p>
+</li>
+<li><p><strong>基于统计的学习方法</strong></p>
+<p>为了降低对专家的依赖，自适应灵活的语言问题，人们<code>使用统计方法让计算机自动学习语言</code>，所谓“统计”，指的是在语料库上进行的统计。所谓<strong>语料库</strong>，指的是<code>人工标注的结构化文本</code></p>
+<p>不同于专家系统，基于统计的学习方法以举<strong>例子</strong>的方式让机器自动学习语言规律。然后机器将这些规律应用到新的、 未知的例子上去。在自然语言处理的语境下，“举例子”就是“制作语料库”</p>
+</li>
+<li><p><strong>历史</strong></p>
+<p>这一小节作者介绍了NLP的发展历史，感兴趣的朋友可以去书本的图灵社区查看，这里列出几个重要节点</p>
+<p><img src="https://s1.ax1x.com/2020/07/23/ULNccD.png" alt="history"></p>
+<p>20世纪80年代之前的主流方法都是规则系统</p>
+<p>20世纪80年代之后，统计模型给人工智能和自然语言处理领域带来了革命性的进展——人们开始标注语料库用于开发和测试NLP模块</p>
+<p><strong>特征工程</strong>：根据语言学知识为统计模型设计特征模板(将语料表示为方便计算机理解的形式)</p>
+<p>2010年后，语料库规模、硬件计算力都得到了很大提升，神经网络得以广泛应用，并冠以“深度学习”的新术语，<code>它不再依赖专家制定特征模板，而能够自动学习原始数据的抽象表示</code></p>
+</li>
+<li><p><strong>规则与统计</strong></p>
+<p>纯粹的规则系统日渐式微，取而代之的是基于统计的系统，但实际工程中语言学知识的作用有两方面</p>
+<ul>
+<li>帮助我们设计更简洁、高效的特征模板</li>
+<li>在语料库建设中发挥作用</li>
+</ul>
+<p>实际运行的系统在预处理和后处理的部分依然会用到一些手写规则</p>
+</li>
+<li><p><strong>传统方法与深度学习</strong></p>
+<p>深度学习在CV领域取得耀眼的成绩，但在NLP领域的基础任务上发力并不大</p>
+<p>词性标注准确率排行榜</p>
+<p><img src="https://s1.ax1x.com/2020/07/23/UL00Wq.png" alt="deep"></p>
+<p>句法分析准确率排行榜</p>
+<p><img src="https://s1.ax1x.com/2020/07/23/ULBi7Q.png" alt="deep1"></p>
+<p>另外，深度学习涉及大量矩阵运算，需要特殊计算硬件(GPU、TPU等)的加速，对硬件需求较高</p>
+<p>无论是传统模型还是神经网络，它们都属于<strong>机器学习</strong>的范畴。掌握传统方法，不仅可以解决计算资源受限时的工程问题，还可以为将来挑战深度学习打下坚实的基础</p>
+</li>
+</ol>
+<h3 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h3><ol>
+<li><p><strong>什么是机器学习</strong></p>
+<p>美国工程院院士Tom Mitchell给过一个明确的定义</p>
+<blockquote>
+<p>机器学习指的是计算机通过某项任务的经验数据提高了在该项任务上的能力</p>
+</blockquote>
+<p>机器学习是让机器学会算法的算法，可以称作为元算法，它指导机器自动学习出另一个算法，通常称被学习的算法为<strong>模型</strong></p>
+</li>
+<li><p><strong>模型</strong></p>
+<p>模型是<code>对现实问题的数学抽象，由一个假设函数以及一系列参数构成</code></p>
+<p>假设中国人名由函数$ f(\boldsymbol x) $输出的符号决定，我们要预测人民对应的性别，负数表示女性，非负数表示男性</p>
+<script type="math/tex; mode=display">
+f(\boldsymbol x) = \boldsymbol w.\boldsymbol x + b</script><p>其中$\boldsymbol w$和$b$是函数的参数，那么模型就是<code>包括参数在内的整个函数</code>。而$\boldsymbol x$是函数的自变量，是一个特征向量，用于表示一个对象的<strong>特征</strong></p>
+</li>
+<li><p><strong>特征</strong></p>
+<p>指的是事物的特点转化的数值，比如牛的特征是 3 条腿、0双翅膀，而鸟的特征是2条腿、1双翅膀。</p>
+<p>对于一个中国人名，姓氏与性别无关。有一些特殊的字(壮、雁、 健、强)是男性常用的，而另一些(丽、燕、冰、雪)则是女性常用的，还有一些(文、海、 宝、玉)则是男女通用的。把人名表示为计算机可以理解的形式，<code>一个名字是否含有这些字</code>就成了最容易想到的特征</p>
+<p>对于“沈雁冰”（茅盾）这个名字来说，它的特征值可以表示为</p>
+<p><img src="https://s1.ax1x.com/2020/07/23/ULRpjA.png" alt="maodun"></p>
+<p>1表示含有该字，0则没有。即二维特征向量$ \boldsymbol x^{(1)} $ = [1, 1]，模型参数中的权重向量也是二维的：$\boldsymbol w$ = [$w_1$, $w_2$]，此时可根据假设函数$f(\boldsymbol x^{(1)}) = w_1 \boldsymbol x_1^ {(1)} + w_2 \boldsymbol x_2^{(1)} + b = w_1 + w_2 + b$是否大于0判断这个名字是否属于男性</p>
+<p>可以通过改变特征向量对应的权重来改变最后的结果。另外特征越多，参数就越多，模型也越复杂。模型的复杂度应与<strong>数据集</strong>相匹配</p>
+</li>
+<li><p><strong>数据集</strong></p>
+<p>供机器学习算法学习的“例子”<sup><a href="#fn_1" id="reffn_1">1</a></sup>称为数据集，一般也称为样本集。在NLP领域中数据集称作<strong>语料库</strong></p>
+<p>机器学习领域常用数据集</p>
+<p><img src="https://s1.ax1x.com/2020/07/23/ULOgBT.png" alt="data"></p>
+</li>
+<li><p><strong>监督学习</strong></p>
+<p>如果把数据集比作供机器学习算法学习的习题集，那么监督学习所用的数据集就是有答案的习题集</p>
+<p>监督学习算法让机器先做一遍题，然后与标准答案作比较，最后根据误差纠正模型的错误</p>
+<p>在上面性别识别的例子中，数据集可表示为($\boldsymbol x^{(i)}, y^{(i)}$)，$y^{(i)} \in $ {+1, -1}，±1分别代表男女</p>
+<p>当答案是男性，而预测结果是女性，即$f(\boldsymbol x)$为负数，只需将$\boldsymbol x_i$对应的权重$w_i$增加即可让函数值从负数变为非负数</p>
+<p><strong>这种在有标签的数据集上迭代学习的过程称为训练，训练用到的数据集称作训练。训练的结果是一系列参数(特征权重)或模型</strong>。利用模型，为任意一个姓名计算一个值，如果非负则给出男性的结论，否则给出女性的结论。这个过程称为<strong>预测</strong></p>
+<p>监督学习的流程</p>
+<p><img src="https://s1.ax1x.com/2020/07/23/ULx1Vf.png" alt="jiandu"></p>
+<p>note:非结构化数据即未加标签的数据</p>
+</li>
+<li><p><strong>无监督学习</strong><br>习题集只有习题没有答案，即机器学习的数据集没有标签，机器只能<code>发现样本之间的联系</code>而无法学习样本与答案之间的关联。典型的无监督学习有</p>
+<ul>
+<li>聚类：概念参照1.2节中的文本聚类</li>
+<li>降维：将样本点从高位空间变换到低维空间的过程。中心思想是降维后尽量不损失信息，或者说<code>让样本在低维空间中每个维度上的方差都尽量大</code>，即保留能体现样本差异度大的维度，去除差异度小的维度</li>
+</ul>
+<p>&nbsp;</p>
+</li>
+<li><p><strong>其他典型机器学习算法</strong></p>
+<ul>
+<li>半监督学习：如果我们训练多个模型，然后对同一个实例执行预测，会得到多个结果。如果这些结果多数一致，则可以将该实例和结果放到一起作为新的训练样本，用来<code>扩充训练集</code></li>
+<li>强化学习：现实世界中的事物之间往往有很长的因果链:我们要正确地执行一系列彼此关联的决策，才能得到最终的成果。这类问题往往需要<code>一边预测，一边根据环境的反馈规划下次决策</code>。常见应用有：自动驾驶、电子竞技和问答系统。</li>
+</ul>
+</li>
+</ol>
+<blockquote id="fn_1">
+<sup>1</sup>. 参考1.3节<strong>自然语言处理的流派</strong>中的<strong>基于统计的学习方法</strong><a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+</blockquote>
+<h3 id="语料库"><a href="#语料库" class="headerlink" title="语料库"></a>语料库</h3><p>语料库作为自然语言处理领域中的数据集，是我们教机器理解语言不可或缺的习题集   </p>
+<ol>
+<li><p>中文分词语料库</p>
+<p>指的是<code>由人工正确切分后的句子集合</code>。著名的有1998年《人民日报》语料库</p>
+</li>
+<li><p>词性标注语料库</p>
+<p>指的是<code>切分并为每个词语指定一个词性</code>的语料。《人民日报》语料库一共含有43种词性，这个集合称作<strong>词性标注集</strong>，其中的一句样例为：</p>
+<p><img src="https://s1.ax1x.com/2020/07/24/UXTcHe.png" alt="cixing"></p>
+<p>每个单词后面用斜杠隔开的就是词性标签</p>
+</li>
+<li><p>命名实体识别语料库</p>
+<p>这种语料库人工<code>标注了文本内部制作者关心的实体名词以及实体类别</code>。比如《人民日报》语料库中一共含有人名、地名和机构名3种命名实体：</p>
+<p><img src="https://s1.ax1x.com/2020/07/24/UX7ECR.png" alt="recog"></p>
+</li>
+<li><p>句法分析语料库</p>
+<p>每个句子都经过了<code>分词、词性标注和句法标注</code>。汉语中常用的句法分析语料库有<strong>CTB</strong>（Chinese Treebank，中文树库)</p>
+<p><img src="https://s1.ax1x.com/2020/07/24/UX7XZD.png" alt="jufa"></p>
+<p>中文单词上面的英文标签表示词性，而箭头表示有语法联系的两个单词，具体是何种联系由箭头上的标签表示</p>
+</li>
+<li><p>文本分类语料库</p>
+<p>指的是<code>人工标注了所属分类的文章构成</code>的语料库。数据量很大，以著名的搜狗文本分类语料库为例，一共包含汽车、财经、IT、健康、体育、旅游、教育、招聘、文化、军事10个类别，每个类别下含有8000篇新闻，每篇新闻大约数百字</p>
+</li>
+</ol>
+<h3 id="开源工具"><a href="#开源工具" class="headerlink" title="开源工具"></a>开源工具</h3><p>常用的NLP工具有教学常用的<strong>NLTK</strong>、斯坦福大学开发的<strong>CoreNLP</strong>，以及国内哈工大开发的<strong>LTP</strong>、本书作者何晗开发的<strong>HanLP</strong></p>
+<h4 id="主流NLP工具比较"><a href="#主流NLP工具比较" class="headerlink" title="主流NLP工具比较"></a>主流NLP工具比较</h4><p><img src="https://s1.ax1x.com/2020/07/24/UXq154.png" alt="tool"></p>
+<p>   <img src="https://s1.ax1x.com/2020/07/24/UXqyRA.png" alt="star"></p>
+<h4 id="HanLP-Python-接口"><a href="#HanLP-Python-接口" class="headerlink" title="HanLP Python 接口"></a>HanLP Python 接口</h4><p>HanLP主项目采用Java开发，书上提供了Python和Java两个版本的代码，但因为我习惯用的Python，所以涉及到双代码的地方博客中只选取Python部分讲解。对Java版本代码感兴趣的朋友可以去书中获取或者直接到作者的github上查阅相关代码</p>
+<p>HanLP的Python接口由pyhanlp包提供，其安装只需一句命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">% pip install pyhanlp</span><br></pre></td></tr></table></figure>
+<p>这个包依赖Java和JPype。Windows用户如果遇到如下错误：</p>
+<p><img src="https://s1.ax1x.com/2020/07/24/UXOW4g.png" alt="error"></p>
+<p>既可以按提示安装Visual C++，也可以安装更轻量级的Miniconda。Miniconda是Python语言的开源发行版，提供更方便的包管理。安装时请勾选下图所示的两个复选框</p>
+<p><img src="https://s1.ax1x.com/2020/07/24/UXXGGQ.png" alt="conda"></p>
+<p>然后执行如下命令:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">% conda install -c conda-forge jpype1</span><br><span class="line">% pip install pyhanlp</span><br></pre></td></tr></table></figure>
+<p>如果遇到Java相关的问题:</p>
+<p><img src="https://s1.ax1x.com/2020/07/24/UXXaq0.png" alt="java"></p>
+<p>请安装Java运行环境(推荐JDK8以上版本)，如果发生其他错误，欢迎前往<a href="https://github.com/hankcs/HanLP/issues" target="_blank" rel="noopener">项目讨论区</a>汇报问题</p>
+<p>mac用户如遇到问题可以参考我的这篇文章：<a href="https://xdzhang-ai.gitee.io/2020/07/21/bug-hanlp-env/" target="_blank" rel="noopener">谈谈mac python3.7搭建HanLP环境时遇到的坑</a></p>
+<p><strong>测试</strong></p>
+<p><img src="https://s1.ax1x.com/2020/07/21/UIsEr9.png" alt="test"></p>
+<p><strong>分词</strong></p>
+<p><img src="https://s1.ax1x.com/2020/07/21/UIyxhV.png" alt="test_fenci"></p>
+<p><strong>句法分析</strong></p>
+<p><img src="https://s1.ax1x.com/2020/07/24/UXzNfU.png" alt="parse"></p>
+<hr>
+<p>《自然语言处理入门》持续更新中</p>
+<p>戳 -&gt; <a href="">目录、资源汇总页</a>查看其他章节</p>
+]]></content>
+      <categories>
+        <category>AI</category>
+        <category>NLP</category>
+        <category>INLP</category>
+      </categories>
+      <tags>
+        <tag>《自然语言处理入门》</tag>
+        <tag>NLP</tag>
+        <tag>HanLP</tag>
+        <tag>AI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>何晗《自然语言处理入门》汇总</title>
+    <url>/2020/07/24/INLP-index/</url>
+    <content><![CDATA[<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><p><a href="https://github.com/hankcs/HanLP" target="_blank" rel="noopener">HanLP github 地址(最新版本)</a></p>
+<p><a href="https://github.com/hankcs/pyhanlp" target="_blank" rel="noopener">HanLP Python版本/接口——pyhanlp github地址</a></p>
+<p><a href="https://github.com/hankcs/pyhanlp/tree/master/tests/book" target="_blank" rel="noopener">随书代码 Python版本</a></p>
+<p><a href="https://github.com/hankcs/HanLP/tree/1.x/src/test/java/com/hankcs/book" target="_blank" rel="noopener">随书代码 Java版本</a></p>
+<p><a href="https://bbs.hankcs.com" target="_blank" rel="noopener">自然语言处理论坛</a></p>
+<p><a href="https://www.ituring.com.cn/book/2706" target="_blank" rel="noopener">第一章PDF及思维导图</a></p>
+<h2 id="读书笔记目录"><a href="#读书笔记目录" class="headerlink" title="读书笔记目录"></a>读书笔记目录</h2><p><a href="">《自然语言处理入门》(一) 新手上路</a></p>
+<p>《自然语言处理入门》(二) 词典分词</p>
+<p>《自然语言处理入门》(三) 二元语法与中文分词</p>
+<p>《自然语言处理入门》(四) 隐马尔可夫模型与序列标注</p>
+<p>《自然语言处理入门》(五) 感知机分类与序列标注</p>
+<p>《自然语言处理入门》(六) 条件随机场与序列标注</p>
+<p>《自然语言处理入门》(七) 词性标注</p>
+<p>《自然语言处理入门》(八) 命名实体识别</p>
+<p>《自然语言处理入门》(九) 信息抽取</p>
+<p>《自然语言处理入门》(十) 文本聚类</p>
+<p>《自然语言处理入门》(十一) 文本分类</p>
+<p>《自然语言处理入门》(十二) 依存句法分析</p>
+<p>《自然语言处理入门》(十三) 深度学习与自然语言处理</p>
+]]></content>
+      <categories>
+        <category>AI</category>
+        <category>NLP</category>
+        <category>INLP</category>
+      </categories>
+      <tags>
+        <tag>《自然语言处理入门》</tag>
+        <tag>NLP</tag>
+        <tag>HanLP</tag>
+        <tag>AI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mac Catalina环境变量配置</title>
+    <url>/2020/07/22/bug-envpara/</url>
+    <content><![CDATA[<h2 id="mac下添加环境变量"><a href="#mac下添加环境变量" class="headerlink" title="mac下添加环境变量"></a>mac下添加环境变量</h2><blockquote>
+<p>转载：<a href="https://www.jianshu.com/p/463244ec27e3" target="_blank" rel="noopener">mac下添加环境变量</a></p>
+</blockquote>
+<p>在<code>~/.bash_profile</code>中添加环境变量后使用</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">% <span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure>
+<p>使文件生效</p>
+<p>使用</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">% <span class="built_in">echo</span> <span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+<p>查看配置的环境变量路径是否已经添加进去了</p>
+<p>&nbsp;</p>
+<p><strong>但是！</strong></p>
+<p>等重启terminal后又失效了，原因：</p>
+<blockquote>
+<p>转载：<a href="https://www.cnblogs.com/yjjs2020/p/11708212.html" target="_blank" rel="noopener">MacOS Catalina之Terminal配置</a></p>
+</blockquote>
+<p>macos在Catalina中把bash改为<code>zsh</code>了，每次启动都会加载<code>~/.zshrc</code>文件</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><ol>
+<li>将环境变量加入到<code>zshrc</code>文件中</li>
+<li>在<code>zshrc</code>文件中添加source <code>~/.bash_profile</code></li>
+</ol>
+]]></content>
+      <categories>
+        <category>bug</category>
+        <category>环境</category>
+      </categories>
+      <tags>
+        <tag>环境</tag>
+        <tag>macos</tag>
+        <tag>Catalina</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>谈谈mac python3.7搭建HanLP环境时遇到的坑</title>
     <url>/2020/07/21/bug-hanlp-env/</url>
     <content><![CDATA[<blockquote>
@@ -64,45 +375,11 @@
         <category>环境</category>
       </categories>
       <tags>
-        <tag>bug</tag>
-        <tag>HanLP</tag>
-        <tag>环境</tag>
         <tag>《自然语言处理入门》</tag>
         <tag>NLP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>mac Catalina环境变量配置</title>
-    <url>/2020/07/22/bug-envpara/</url>
-    <content><![CDATA[<h2 id="mac下添加环境变量"><a href="#mac下添加环境变量" class="headerlink" title="mac下添加环境变量"></a>mac下添加环境变量</h2><blockquote>
-<p>转载：<a href="https://www.jianshu.com/p/463244ec27e3" target="_blank" rel="noopener">mac下添加环境变量</a></p>
-</blockquote>
-<p>在<code>~/.bash_profile</code>中添加环境变量后使用</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">% <span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure>
-<p>使文件生效</p>
-<p>使用</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">% <span class="built_in">echo</span> <span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
-<p>查看配置的环境变量路径是否已经添加进去了</p>
-<p>&nbsp;</p>
-<p><strong>但是！</strong></p>
-<p>等重启terminal后又失效了，原因：</p>
-<blockquote>
-<p>转载：<a href="https://www.cnblogs.com/yjjs2020/p/11708212.html" target="_blank" rel="noopener">MacOS Catalina之Terminal配置</a></p>
-</blockquote>
-<p>macos在Catalina中把bash改为<code>zsh</code>了，每次启动都会加载<code>~/.zshrc</code>文件</p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><ol>
-<li>将环境变量加入到<code>zshrc</code>文件中</li>
-<li>在<code>zshrc</code>文件中添加source <code>~/.bash_profile</code></li>
-</ol>
-]]></content>
-      <categories>
-        <category>bug</category>
-        <category>环境</category>
-      </categories>
-      <tags>
+        <tag>HanLP</tag>
         <tag>环境</tag>
-        <tag>macos</tag>
-        <tag>Catalina</tag>
+        <tag>bug</tag>
       </tags>
   </entry>
   <entry>
@@ -158,6 +435,89 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>markdown语法指南</title>
+    <url>/2020/07/11/markdown-guide/</url>
+    <content><![CDATA[<h1 id="markdown语法"><a href="#markdown语法" class="headerlink" title="markdown语法"></a>markdown语法</h1><blockquote>
+<p>mardown编辑器：typora</p>
+<p>环境：hexo博客</p>
+</blockquote>
+<h2 id="1-标题"><a href="#1-标题" class="headerlink" title="1.标题"></a>1.标题</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 一级标题</span></span><br><span class="line"><span class="comment">## 二级标题</span></span><br><span class="line"><span class="comment">### 三级标题</span></span><br><span class="line"><span class="comment">#### 四级标题</span></span><br><span class="line"><span class="comment">##### 五级标题</span></span><br><span class="line"><span class="comment">###### 六级标题</span></span><br></pre></td></tr></table></figure>
+<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><h2 id="2-代码块"><a href="#2-代码块" class="headerlink" title="2.代码块"></a>2.代码块</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">​```python</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">print(<span class="string">'hello world'</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="3-字体修改"><a href="#3-字体修改" class="headerlink" title="3.字体修改"></a>3.字体修改</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">加粗：	  **祖安搬砖客**</span><br><span class="line">高亮：	  ==祖安搬砖客== (在markdown中适用但hexo渲染失败) 建议改为 -&gt; `祖安搬砖客`</span><br><span class="line">删除线：   ~~祖安搬砖客~~</span><br><span class="line">斜体：	   *祖安搬砖客*</span><br></pre></td></tr></table></figure>
+<p><strong>祖安搬砖客</strong><br><code>祖安搬砖客</code><br><del>祖安搬砖客</del><br><em>祖安搬砖客</em></p>
+<h2 id="4-引用"><a href="#4-引用" class="headerlink" title="4.引用"></a>4.引用</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&gt;作者：张三</span><br><span class="line">&gt;&gt;作者：李四</span><br><span class="line">&gt;&gt;&gt;作者：王五</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>作者：张三</p>
+<blockquote>
+<p>作者：李四</p>
+<blockquote>
+<p>作者：王五</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="5-分割线"><a href="#5-分割线" class="headerlink" title="5.分割线"></a>5.分割线</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">款式<span class="number">1</span>：	***</span><br><span class="line">款式<span class="number">2</span>：	---</span><br></pre></td></tr></table></figure>
+<hr>
+<hr>
+<h2 id="6-图片"><a href="#6-图片" class="headerlink" title="6.图片"></a>6.<a href="">图片</a></h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">![照片名](照片路径)</span><br><span class="line">缩放图片： 在输入![照片名](照片路径)后typora会弹出缩放选项</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2020/07/12/U3kL5Q.jpg" alt="背景" /></p>
+<p>缩放后的图片</p>
+<p><img src="https://s1.ax1x.com/2020/07/12/U3kL5Q.jpg" alt="背景2" style="zoom:20%;" /></p>
+<h2 id="7-链接"><a href="#7-链接" class="headerlink" title="7.链接"></a>7.链接</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">[链接名](链接)</span><br></pre></td></tr></table></figure>
+<p><a href="https://github.com/xdzhang-ai" target="_blank" rel="noopener">祖安搬砖客的github</a></p>
+<h2 id="8-脚注"><a href="#8-脚注" class="headerlink" title="8.脚注"></a>8.脚注</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">在内容旁添加 [^脚注标号]</span><br><span class="line">在文章末添加 [^脚注标号]: 注释内容	<span class="comment"># 一定要加空格！！！</span></span><br></pre></td></tr></table></figure>
+<p>文章内容<sup><a href="#fn_1" id="reffn_1">1</a></sup></p>
+<p>空白行<sup><a href="#fn_2" id="reffn_2">2</a></sup> </p>
+<p>&nbsp;</p>
+<h2 id="9-列表"><a href="#9-列表" class="headerlink" title="9.列表"></a>9.列表</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">无序列表：</span><br><span class="line">    - 元素<span class="number">1</span></span><br><span class="line">    - 元素<span class="number">2</span></span><br><span class="line">    - 元素<span class="number">3</span></span><br><span class="line">有序列表：</span><br><span class="line">    <span class="number">1.</span> 元素<span class="number">1</span></span><br><span class="line">    <span class="number">2.</span> 元素<span class="number">2</span></span><br><span class="line">    <span class="number">3.</span> 元素<span class="number">3</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>昨天</li>
+<li>今天</li>
+<li>明天</li>
+</ul>
+<ol>
+<li>大</li>
+<li>中</li>
+<li>小</li>
+</ol>
+<h2 id="10-表格"><a href="#10-表格" class="headerlink" title="10.表格"></a>10.表格</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">建议使用typora中的插入表格</span><br></pre></td></tr></table></figure>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">性别</th>
+<th style="text-align:center">男</th>
+<th style="text-align:center">女</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">年龄</td>
+<td style="text-align:center">23</td>
+<td style="text-align:center">21</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>注：在typora中按住command+/可显示markdown源码</strong></p>
+<blockquote id="fn_1">
+<sup>1</sup>.  脚注测试，访问<a href="https://xdzhang-ai.github.io/2020/07/11/markdown-guide/" target="_blank" rel="noopener">markdown语法指南</a>获取更多内容<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_2">
+<sup>2</sup>. 使用<code>&amp;nbsp;</code>产生空白行<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
+</blockquote>
+]]></content>
+      <categories>
+        <category>语言</category>
+        <category>markdown</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+        <tag>语法</tag>
+        <tag>typora</tag>
+      </tags>
   </entry>
   <entry>
     <title>一款好看的pycharm主题Atom One Dark</title>
@@ -261,89 +621,6 @@
         <tag>hexo</tag>
         <tag>gitee</tag>
         <tag>图床</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>markdown语法指南</title>
-    <url>/2020/07/11/markdown-guide/</url>
-    <content><![CDATA[<h1 id="markdown语法"><a href="#markdown语法" class="headerlink" title="markdown语法"></a>markdown语法</h1><blockquote>
-<p>mardown编辑器：typora</p>
-<p>环境：hexo博客</p>
-</blockquote>
-<h2 id="1-标题"><a href="#1-标题" class="headerlink" title="1.标题"></a>1.标题</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 一级标题</span></span><br><span class="line"><span class="comment">## 二级标题</span></span><br><span class="line"><span class="comment">### 三级标题</span></span><br><span class="line"><span class="comment">#### 四级标题</span></span><br><span class="line"><span class="comment">##### 五级标题</span></span><br><span class="line"><span class="comment">###### 六级标题</span></span><br></pre></td></tr></table></figure>
-<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><h2 id="2-代码块"><a href="#2-代码块" class="headerlink" title="2.代码块"></a>2.代码块</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">​```python</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">print(<span class="string">'hello world'</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="3-字体修改"><a href="#3-字体修改" class="headerlink" title="3.字体修改"></a>3.字体修改</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">加粗：	  **祖安搬砖客**</span><br><span class="line">高亮：	  ==祖安搬砖客== (在markdown中适用但hexo渲染失败) 建议改为 -&gt; `祖安搬砖客`</span><br><span class="line">删除线：   ~~祖安搬砖客~~</span><br><span class="line">斜体：	   *祖安搬砖客*</span><br></pre></td></tr></table></figure>
-<p><strong>祖安搬砖客</strong><br><code>祖安搬砖客</code><br><del>祖安搬砖客</del><br><em>祖安搬砖客</em></p>
-<h2 id="4-引用"><a href="#4-引用" class="headerlink" title="4.引用"></a>4.引用</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&gt;作者：张三</span><br><span class="line">&gt;&gt;作者：李四</span><br><span class="line">&gt;&gt;&gt;作者：王五</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>作者：张三</p>
-<blockquote>
-<p>作者：李四</p>
-<blockquote>
-<p>作者：王五</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h2 id="5-分割线"><a href="#5-分割线" class="headerlink" title="5.分割线"></a>5.分割线</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">款式<span class="number">1</span>：	***</span><br><span class="line">款式<span class="number">2</span>：	---</span><br></pre></td></tr></table></figure>
-<hr>
-<hr>
-<h2 id="6-图片"><a href="#6-图片" class="headerlink" title="6.图片"></a>6.<a href="">图片</a></h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">![照片名](照片路径)</span><br><span class="line">缩放图片： 在输入![照片名](照片路径)后typora会弹出缩放选项</span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2020/07/12/U3kL5Q.jpg" alt="背景" /></p>
-<p>缩放后的图片</p>
-<p><img src="https://s1.ax1x.com/2020/07/12/U3kL5Q.jpg" alt="背景2" style="zoom:20%;" /></p>
-<h2 id="7-链接"><a href="#7-链接" class="headerlink" title="7.链接"></a>7.链接</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">[链接名](链接)</span><br></pre></td></tr></table></figure>
-<p><a href="https://github.com/xdzhang-ai" target="_blank" rel="noopener">祖安搬砖客的github</a></p>
-<h2 id="8-脚注"><a href="#8-脚注" class="headerlink" title="8.脚注"></a>8.脚注</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">在内容旁添加 [^脚注标号]</span><br><span class="line">在文章末添加 [^脚注标号]: 注释内容	<span class="comment"># 一定要加空格！！！</span></span><br></pre></td></tr></table></figure>
-<p>文章内容<sup><a href="#fn_1" id="reffn_1">1</a></sup></p>
-<p>空白行<sup><a href="#fn_2" id="reffn_2">2</a></sup> </p>
-<p>&nbsp;</p>
-<h2 id="9-列表"><a href="#9-列表" class="headerlink" title="9.列表"></a>9.列表</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">无序列表：</span><br><span class="line">    - 元素<span class="number">1</span></span><br><span class="line">    - 元素<span class="number">2</span></span><br><span class="line">    - 元素<span class="number">3</span></span><br><span class="line">有序列表：</span><br><span class="line">    <span class="number">1.</span> 元素<span class="number">1</span></span><br><span class="line">    <span class="number">2.</span> 元素<span class="number">2</span></span><br><span class="line">    <span class="number">3.</span> 元素<span class="number">3</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>昨天</li>
-<li>今天</li>
-<li>明天</li>
-</ul>
-<ol>
-<li>大</li>
-<li>中</li>
-<li>小</li>
-</ol>
-<h2 id="10-表格"><a href="#10-表格" class="headerlink" title="10.表格"></a>10.表格</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">建议使用typora中的插入表格</span><br></pre></td></tr></table></figure>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">性别</th>
-<th style="text-align:center">男</th>
-<th style="text-align:center">女</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">年龄</td>
-<td style="text-align:center">23</td>
-<td style="text-align:center">21</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>注：在typora中按住command+/可显示markdown源码</strong></p>
-<blockquote id="fn_1">
-<sup>1</sup>.  脚注测试，访问<a href="https://xdzhang-ai.github.io/2020/07/11/markdown-guide/" target="_blank" rel="noopener">markdown语法指南</a>获取更多内容<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_2">
-<sup>2</sup>. 使用<code>&amp;nbsp;</code>产生空白行<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
-</blockquote>
-]]></content>
-      <categories>
-        <category>语言</category>
-        <category>markdown</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
-        <tag>语法</tag>
-        <tag>typora</tag>
       </tags>
   </entry>
 </search>
