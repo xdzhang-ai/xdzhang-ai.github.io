@@ -1,6 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>何晗《自然语言处理入门》汇总</title>
+    <url>/2020/07/24/INLP-index/</url>
+    <content><![CDATA[<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><p><a href="https://github.com/hankcs/HanLP" target="_blank" rel="noopener">HanLP github 地址(最新版本)</a></p>
+<p><a href="https://github.com/hankcs/pyhanlp" target="_blank" rel="noopener">HanLP Python版本/接口——pyhanlp github地址</a></p>
+<p><a href="https://github.com/hankcs/pyhanlp/tree/master/tests/book" target="_blank" rel="noopener">随书代码 Python版本</a></p>
+<p><a href="https://github.com/hankcs/HanLP/tree/1.x/src/test/java/com/hankcs/book" target="_blank" rel="noopener">随书代码 Java版本</a></p>
+<p><a href="https://bbs.hankcs.com" target="_blank" rel="noopener">自然语言处理论坛</a></p>
+<p><a href="https://www.ituring.com.cn/book/2706" target="_blank" rel="noopener">第一章PDF及思维导图</a></p>
+<h2 id="读书笔记目录"><a href="#读书笔记目录" class="headerlink" title="读书笔记目录"></a>读书笔记目录</h2><p><a href="https://xdzhang-ai.gitee.io/2020/07/23/INLP-01/" target="_blank" rel="noopener">《自然语言处理入门》(一) 新手上路</a></p>
+<p>《自然语言处理入门》(二) 词典分词</p>
+<p>《自然语言处理入门》(三) 二元语法与中文分词</p>
+<p>《自然语言处理入门》(四) 隐马尔可夫模型与序列标注</p>
+<p>《自然语言处理入门》(五) 感知机分类与序列标注</p>
+<p>《自然语言处理入门》(六) 条件随机场与序列标注</p>
+<p>《自然语言处理入门》(七) 词性标注</p>
+<p>《自然语言处理入门》(八) 命名实体识别</p>
+<p>《自然语言处理入门》(九) 信息抽取</p>
+<p>《自然语言处理入门》(十) 文本聚类</p>
+<p>《自然语言处理入门》(十一) 文本分类</p>
+<p>《自然语言处理入门》(十二) 依存句法分析</p>
+<p>《自然语言处理入门》(十三) 深度学习与自然语言处理</p>
+]]></content>
+      <categories>
+        <category>AI</category>
+        <category>NLP</category>
+        <category>INLP</category>
+      </categories>
+      <tags>
+        <tag>《自然语言处理入门》</tag>
+        <tag>NLP</tag>
+        <tag>HanLP</tag>
+        <tag>AI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python模块bug —— matplotlib</title>
+    <url>/2020/07/27/bug-matplotlib/</url>
+    <content><![CDATA[<h3 id="图片中文乱码"><a href="#图片中文乱码" class="headerlink" title="图片中文乱码"></a>图片中文乱码</h3><p>mac下用matplotlib绘图时发生标题和label中文乱码</p>
+<p>应该是matplotlib默认的字库在mac下没有或字体对中文不支持导致</p>
+<p>输入以下代码可以查看系统可用字体</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> matplotlib.font_manager <span class="keyword">import</span> FontManager</span><br><span class="line">fm = FontManager()</span><br><span class="line">mat_fonts = set(f.name <span class="keyword">for</span> f <span class="keyword">in</span> fm.ttflist)</span><br><span class="line">print(mat_fonts)</span><br></pre></td></tr></table></figure>
+<p>选择一个适用的字体并设置：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">plt.rcParams[<span class="string">'font.sans-serif'</span>] = [<span class="string">'Arial Unicode MS'</span>]</span><br></pre></td></tr></table></figure>
+<p>转载于<a href="https://blog.csdn.net/qq_32590631/article/details/80509741" target="_blank" rel="noopener">mac下python matplotlib中文乱码解决方案（亲测可用）！！</a></p>
+]]></content>
+      <categories>
+        <category>bug</category>
+        <category>python module</category>
+      </categories>
+      <tags>
+        <tag>bug</tag>
+        <tag>python module</tag>
+        <tag>matplotlib</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>mac Catalina环境变量配置</title>
     <url>/2020/07/22/bug-envpara/</url>
     <content><![CDATA[<h2 id="mac下添加环境变量"><a href="#mac下添加环境变量" class="headerlink" title="mac下添加环境变量"></a>mac下添加环境变量</h2><blockquote>
@@ -277,81 +333,6 @@ f(\boldsymbol x) = \boldsymbol w.\boldsymbol x + b</script><p>其中$\boldsymbol
       </tags>
   </entry>
   <entry>
-    <title>何晗《自然语言处理入门》汇总</title>
-    <url>/2020/07/24/INLP-index/</url>
-    <content><![CDATA[<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><p><a href="https://github.com/hankcs/HanLP" target="_blank" rel="noopener">HanLP github 地址(最新版本)</a></p>
-<p><a href="https://github.com/hankcs/pyhanlp" target="_blank" rel="noopener">HanLP Python版本/接口——pyhanlp github地址</a></p>
-<p><a href="https://github.com/hankcs/pyhanlp/tree/master/tests/book" target="_blank" rel="noopener">随书代码 Python版本</a></p>
-<p><a href="https://github.com/hankcs/HanLP/tree/1.x/src/test/java/com/hankcs/book" target="_blank" rel="noopener">随书代码 Java版本</a></p>
-<p><a href="https://bbs.hankcs.com" target="_blank" rel="noopener">自然语言处理论坛</a></p>
-<p><a href="https://www.ituring.com.cn/book/2706" target="_blank" rel="noopener">第一章PDF及思维导图</a></p>
-<h2 id="读书笔记目录"><a href="#读书笔记目录" class="headerlink" title="读书笔记目录"></a>读书笔记目录</h2><p><a href="https://xdzhang-ai.gitee.io/2020/07/23/INLP-01/" target="_blank" rel="noopener">《自然语言处理入门》(一) 新手上路</a></p>
-<p>《自然语言处理入门》(二) 词典分词</p>
-<p>《自然语言处理入门》(三) 二元语法与中文分词</p>
-<p>《自然语言处理入门》(四) 隐马尔可夫模型与序列标注</p>
-<p>《自然语言处理入门》(五) 感知机分类与序列标注</p>
-<p>《自然语言处理入门》(六) 条件随机场与序列标注</p>
-<p>《自然语言处理入门》(七) 词性标注</p>
-<p>《自然语言处理入门》(八) 命名实体识别</p>
-<p>《自然语言处理入门》(九) 信息抽取</p>
-<p>《自然语言处理入门》(十) 文本聚类</p>
-<p>《自然语言处理入门》(十一) 文本分类</p>
-<p>《自然语言处理入门》(十二) 依存句法分析</p>
-<p>《自然语言处理入门》(十三) 深度学习与自然语言处理</p>
-]]></content>
-      <categories>
-        <category>AI</category>
-        <category>NLP</category>
-        <category>INLP</category>
-      </categories>
-      <tags>
-        <tag>《自然语言处理入门》</tag>
-        <tag>NLP</tag>
-        <tag>HanLP</tag>
-        <tag>AI</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo之front-matter</title>
-    <url>/2020/07/13/front-matter/</url>
-    <content><![CDATA[<blockquote>
-<p><a href="https://hexo.bootcss.com/docs/front-matter.html" target="_blank" rel="noopener">hexo官方文档</a></p>
-<p>Front-matter 是文件最上方以 <code>---</code> 分隔的区域，用于指定个别文件的变量</p>
-</blockquote>
-<p>在hexo生成文件时，会调用front-matter的参数来完成相关配置</p>
-<p>常用的参数有</p>
-<ul>
-<li>title           标题</li>
-<li>date          建立日期</li>
-<li>comments       评论（如果设置了评论功能可以选择是否开启）</li>
-<li>description      描述（用于指定显示在首页中的文章描述，不会在文章中出现）</li>
-<li><code>tags</code>       标签</li>
-<li><code>categories</code>      分类       </li>
-</ul>
-<p>其中<code>标签</code>和<code>分类</code>需要重点关注，两者概念看似接近，实则不同，用法也有差异</p>
-<p>&nbsp;</p>
-<p>对于<code>标签</code>来说</p>
-<p>​    一篇文章可以有单个或多个标签，多个标签时标签之间是<strong>同级</strong>的</p>
-<p>​    在<code>front-matter</code>中可以通过以下方式生成多个标签<sup><a href="#fn_1" id="reffn_1">1</a></sup></p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">tags: [tag1, tag2, tag3]</span><br></pre></td></tr></table></figure>
-<p>对于<code>分类</code>来说</p>
-<p>​    一篇文章只允许有<strong>一个</strong>分类，不能同时分类到多个类别下，但是可以生成<strong>多级</strong>类别</p>
-<p>​    在<code>front-matter</code>中可以通过以下方式生成多级类别</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">categories:</span><br><span class="line"><span class="bullet">- </span>cat1</span><br><span class="line"><span class="bullet">- </span>cat2</span><br><span class="line"><span class="bullet">- </span>cat3</span><br></pre></td></tr></table></figure>
-<p>​    这样文章就会被归类到<code>cat1</code>下的子类<code>cat2</code>下的子类<code>cat3</code>类别下</p>
-<blockquote id="fn_1">
-<sup>1</sup>. 必须遵守严格的front-matter语法——<code>:</code>后要+<code>空格</code><a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
-</blockquote>
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>front-matter</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>谈谈mac python3.7搭建HanLP环境时遇到的坑</title>
     <url>/2020/07/21/bug-hanlp-env/</url>
     <content><![CDATA[<blockquote>
@@ -415,12 +396,66 @@ f(\boldsymbol x) = \boldsymbol w.\boldsymbol x + b</script><p>其中$\boldsymbol
         <category>环境</category>
       </categories>
       <tags>
-        <tag>环境</tag>
         <tag>《自然语言处理入门》</tag>
         <tag>NLP</tag>
         <tag>HanLP</tag>
         <tag>bug</tag>
+        <tag>环境</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>hexo之front-matter</title>
+    <url>/2020/07/13/front-matter/</url>
+    <content><![CDATA[<blockquote>
+<p><a href="https://hexo.bootcss.com/docs/front-matter.html" target="_blank" rel="noopener">hexo官方文档</a></p>
+<p>Front-matter 是文件最上方以 <code>---</code> 分隔的区域，用于指定个别文件的变量</p>
+</blockquote>
+<p>在hexo生成文件时，会调用front-matter的参数来完成相关配置</p>
+<p>常用的参数有</p>
+<ul>
+<li>title           标题</li>
+<li>date          建立日期</li>
+<li>comments       评论（如果设置了评论功能可以选择是否开启）</li>
+<li>description      描述（用于指定显示在首页中的文章描述，不会在文章中出现）</li>
+<li><code>tags</code>       标签</li>
+<li><code>categories</code>      分类       </li>
+</ul>
+<p>其中<code>标签</code>和<code>分类</code>需要重点关注，两者概念看似接近，实则不同，用法也有差异</p>
+<p>&nbsp;</p>
+<p>对于<code>标签</code>来说</p>
+<p>​    一篇文章可以有单个或多个标签，多个标签时标签之间是<strong>同级</strong>的</p>
+<p>​    在<code>front-matter</code>中可以通过以下方式生成多个标签<sup><a href="#fn_1" id="reffn_1">1</a></sup></p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">tags: [tag1, tag2, tag3]</span><br></pre></td></tr></table></figure>
+<p>对于<code>分类</code>来说</p>
+<p>​    一篇文章只允许有<strong>一个</strong>分类，不能同时分类到多个类别下，但是可以生成<strong>多级</strong>类别</p>
+<p>​    在<code>front-matter</code>中可以通过以下方式生成多级类别</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">categories:</span><br><span class="line"><span class="bullet">- </span>cat1</span><br><span class="line"><span class="bullet">- </span>cat2</span><br><span class="line"><span class="bullet">- </span>cat3</span><br></pre></td></tr></table></figure>
+<p>​    这样文章就会被归类到<code>cat1</code>下的子类<code>cat2</code>下的子类<code>cat3</code>类别下</p>
+<blockquote id="fn_1">
+<sup>1</sup>. 必须遵守严格的front-matter语法——<code>:</code>后要+<code>空格</code><a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+</blockquote>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>front-matter</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/07/10/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>markdown语法指南</title>
@@ -504,20 +539,6 @@ f(\boldsymbol x) = \boldsymbol w.\boldsymbol x + b</script><p>其中$\boldsymbol
         <tag>语法</tag>
         <tag>typora</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2020/07/10/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
   </entry>
   <entry>
     <title>一款好看的pycharm主题Atom One Dark</title>
